@@ -15,7 +15,7 @@ with open(input_file, mode='r', newline='') as infile:
         
         # Create the directory path based on SERVICE_CHANGE_NUM and SERVICE_RTE_NUM
         # eg: 7/24/241
-        directory = f"../../data/kcmRouteData/{service_rte_num}/{service_change_num[:2]}/{service_change_num}"
+        directory = f"../../data/kcmRouteData/{service_rte_num}/{service_change_num[:2]}/{service_change_num}/Weekday"
         os.makedirs(directory, exist_ok=True)
         
         # Define the output file path

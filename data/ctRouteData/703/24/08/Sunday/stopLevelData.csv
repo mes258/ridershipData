@@ -1,0 +1,111 @@
+SERVICE_RTE_NUM,INBD_OUTBD_CD,DAY_PART_CD,STOP_ID,STOP_NAME,DAY_TYPE,AVG_TRIP_BOARDINGS,AVG_TOTAL_BOARDINGS,AVG_TRIP_ALIGHTINGS,AVG_TOTAL_ALIGHTINGS,AVG_TRIP_DEPARTING_LOAD
+703,I,AM,3222,Edmonds College Transit Center Station,Sunday,2.143,15.000,0.000,0.000,2.143
+703,I,AM,3225,Hwy 99 EB Station,Sunday,2.000,14.000,0.107,0.750,4.036
+703,I,AM,3227,Lynnwood City Center EB Station,Sunday,1.679,11.750,1.071,7.500,4.107
+703,I,AM,3228,188th St SW EB Station,Sunday,0.125,0.750,1.750,10.500,3.000
+703,I,AM,3229,180th Pl SW EB Station,Sunday,0.125,0.750,0.208,1.250,2.917
+703,I,AM,3231,Swamp Creek Park & Ride EB Station,Sunday,1.000,6.000,0.125,0.750,3.792
+703,I,AM,3239,Ash Way Park & Ride Station,Sunday,0.583,3.500,0.542,3.250,3.833
+703,I,AM,3233,Larch Way EB Station,Sunday,0.375,2.250,0.167,1.000,3.792
+703,I,AM,3234,North Rd EB Station,Sunday,0.167,1.000,0.167,1.000,3.542
+703,I,AM,3029,164th St SE NB Station,Sunday,0.050,0.250,0.600,3.000,3.650
+703,I,AM,3028,153rd St SE NB Station,Sunday,0.050,0.250,0.700,3.500,3.000
+703,I,AM,3027,Trillium Blvd NB Station,Sunday,0.000,0.000,0.550,2.750,2.450
+703,I,AM,3224,McCollum Park Park & Ride Station,Sunday,0.000,0.000,2.450,12.250,0.000
+703,I,MID,3234,North Rd EB Station,Sunday,0.472,8.500,0.375,6.750,4.639
+703,I,MID,3029,164th St SE NB Station,Sunday,0.333,6.000,1.264,22.750,3.722
+703,I,MID,3028,153rd St SE NB Station,Sunday,0.139,2.500,0.792,14.250,3.069
+703,I,MID,3027,Trillium Blvd NB Station,Sunday,0.042,0.750,0.458,8.250,2.653
+703,I,MID,3224,McCollum Park Park & Ride Station,Sunday,0.014,0.250,2.667,48.000,0.000
+703,I,MID,3227,Lynnwood City Center EB Station,Sunday,2.958,53.250,1.694,30.500,8.208
+703,I,MID,3228,188th St SW EB Station,Sunday,0.889,16.000,4.486,80.750,4.667
+703,I,MID,3229,180th Pl SW EB Station,Sunday,0.153,2.750,0.361,6.500,4.458
+703,I,MID,3231,Swamp Creek Park & Ride EB Station,Sunday,0.639,11.500,0.389,7.000,4.708
+703,I,MID,3239,Ash Way Park & Ride Station,Sunday,1.208,21.750,0.806,14.500,5.042
+703,I,MID,3233,Larch Way EB Station,Sunday,0.347,6.250,0.847,15.250,4.458
+703,I,MID,3222,Edmonds College Transit Center Station,Sunday,3.778,68.000,0.000,0.000,3.778
+703,I,MID,3225,Hwy 99 EB Station,Sunday,3.875,69.750,0.278,5.000,7.375
+703,I,PM,3233,Larch Way EB Station,Sunday,0.917,11.000,1.354,16.250,6.604
+703,I,PM,3234,North Rd EB Station,Sunday,0.229,2.750,1.062,12.750,5.771
+703,I,PM,3029,164th St SE NB Station,Sunday,0.833,10.000,1.917,23.000,4.688
+703,I,PM,3028,153rd St SE NB Station,Sunday,0.146,1.750,1.146,13.750,3.688
+703,I,PM,3027,Trillium Blvd NB Station,Sunday,0.062,0.750,1.062,12.750,2.688
+703,I,PM,3224,McCollum Park Park & Ride Station,Sunday,0.000,0.000,2.481,32.250,0.000
+703,I,PM,3227,Lynnwood City Center EB Station,Sunday,3.229,38.750,1.771,21.250,9.188
+703,I,PM,3228,188th St SW EB Station,Sunday,2.708,32.500,4.146,49.750,7.750
+703,I,PM,3229,180th Pl SW EB Station,Sunday,0.333,4.000,0.708,8.500,7.375
+703,I,PM,3231,Swamp Creek Park & Ride EB Station,Sunday,1.125,13.500,1.354,16.250,7.146
+703,I,PM,3239,Ash Way Park & Ride Station,Sunday,1.442,18.750,1.077,14.000,6.731
+703,I,PM,3222,Edmonds College Transit Center Station,Sunday,3.188,38.250,0.000,0.000,3.188
+703,I,PM,3225,Hwy 99 EB Station,Sunday,4.271,51.250,0.125,1.500,7.333
+703,I,XEV,3233,Larch Way EB Station,Sunday,0.500,4.500,1.222,11.000,5.694
+703,I,XEV,3234,North Rd EB Station,Sunday,0.083,0.750,0.944,8.500,4.833
+703,I,XEV,3029,164th St SE NB Station,Sunday,0.611,5.500,1.667,15.000,3.778
+703,I,XEV,3028,153rd St SE NB Station,Sunday,0.250,2.250,0.944,8.500,3.083
+703,I,XEV,3027,Trillium Blvd NB Station,Sunday,0.000,0.000,0.750,6.750,2.333
+703,I,XEV,3224,McCollum Park Park & Ride Station,Sunday,0.000,0.000,2.333,21.000,0.000
+703,I,XEV,3227,Lynnwood City Center EB Station,Sunday,2.944,26.500,1.750,15.750,6.611
+703,I,XEV,3228,188th St SW EB Station,Sunday,2.250,20.250,2.000,18.000,6.861
+703,I,XEV,3229,180th Pl SW EB Station,Sunday,0.139,1.250,0.611,5.500,6.389
+703,I,XEV,3231,Swamp Creek Park & Ride EB Station,Sunday,0.972,8.750,1.250,11.250,6.111
+703,I,XEV,3239,Ash Way Park & Ride Station,Sunday,1.125,11.250,1.300,13.000,5.750
+703,I,XEV,3222,Edmonds College Transit Center Station,Sunday,2.281,18.250,0.000,0.000,2.281
+703,I,XEV,3225,Hwy 99 EB Station,Sunday,3.125,25.000,0.156,1.250,5.250
+703,I,XNT,3233,Larch Way EB Station,Sunday,0.000,0.000,1.000,1.000,4.750
+703,I,XNT,3234,North Rd EB Station,Sunday,0.000,0.000,0.250,0.250,4.500
+703,I,XNT,3029,164th St SE NB Station,Sunday,0.750,0.750,2.000,2.000,3.250
+703,I,XNT,3028,153rd St SE NB Station,Sunday,0.000,0.000,0.250,0.250,3.000
+703,I,XNT,3027,Trillium Blvd NB Station,Sunday,0.000,0.000,0.000,0.000,3.000
+703,I,XNT,3224,McCollum Park Park & Ride Station,Sunday,0.000,0.000,3.000,3.000,0.000
+703,O,AM,3224,McCollum Park Park & Ride Station,Sunday,2.036,14.250,0.000,0.000,2.036
+703,O,AM,3046,Trillium Blvd SB Station,Sunday,0.607,4.250,0.071,0.500,2.571
+703,O,AM,3047,153rd St SE SB Station,Sunday,0.571,4.000,0.036,0.250,3.107
+703,O,AM,3236,Mill Creek Blvd WB Station,Sunday,0.500,3.500,0.071,0.500,3.321
+703,O,AM,3237,North Rd WB Station,Sunday,0.833,5.000,0.000,0.000,4.208
+703,O,AM,3238,Larch Way WB Station,Sunday,1.333,8.000,0.333,2.000,5.208
+703,O,AM,3239,Ash Way Park & Ride Station,Sunday,1.167,7.000,1.042,6.250,5.333
+703,O,AM,3240,Swamp Creek Park & Ride WB Station,Sunday,0.792,4.750,1.000,6.000,5.125
+703,O,AM,3242,180th Pl SW WB Station,Sunday,0.250,1.500,0.083,0.500,5.292
+703,O,AM,3243,188th St SW WB Station,Sunday,0.333,2.000,0.500,3.000,5.125
+703,O,AM,3244,Lynnwood City Center WB Station,Sunday,1.083,6.500,1.708,10.250,4.292
+703,O,AM,3246,Hwy 99 WB Station,Sunday,0.050,0.250,2.200,11.000,2.550
+703,O,AM,3222,Edmonds College Transit Center Station,Sunday,0.000,0.000,2.550,12.750,0.000
+703,O,MID,3244,Lynnwood City Center WB Station,Sunday,1.653,29.750,2.139,38.500,5.222
+703,O,MID,3246,Hwy 99 WB Station,Sunday,0.278,5.000,2.569,46.250,3.056
+703,O,MID,3222,Edmonds College Transit Center Station,Sunday,0.000,0.000,3.056,55.000,0.000
+703,O,MID,3236,Mill Creek Blvd WB Station,Sunday,1.671,31.750,0.184,3.500,5.513
+703,O,MID,3237,North Rd WB Station,Sunday,0.750,14.250,0.408,7.750,5.882
+703,O,MID,3238,Larch Way WB Station,Sunday,0.789,15.000,0.632,12.000,5.934
+703,O,MID,3239,Ash Way Park & Ride Station,Sunday,1.403,25.250,1.208,21.750,6.264
+703,O,MID,3240,Swamp Creek Park & Ride WB Station,Sunday,0.778,14.000,0.750,13.500,6.292
+703,O,MID,3242,180th Pl SW WB Station,Sunday,0.625,11.250,0.278,5.000,6.639
+703,O,MID,3243,188th St SW WB Station,Sunday,1.847,33.250,2.486,44.750,6.000
+703,O,MID,3224,McCollum Park Park & Ride Station,Sunday,2.431,43.750,0.000,0.000,2.431
+703,O,MID,3046,Trillium Blvd SB Station,Sunday,0.903,16.250,0.139,2.500,3.194
+703,O,MID,3047,153rd St SE SB Station,Sunday,1.194,21.500,0.222,4.000,4.167
+703,O,PM,3244,Lynnwood City Center WB Station,Sunday,1.854,22.250,4.292,51.500,7.167
+703,O,PM,3246,Hwy 99 WB Station,Sunday,0.479,5.750,3.625,43.500,4.021
+703,O,PM,3222,Edmonds College Transit Center Station,Sunday,0.000,0.000,4.021,48.250,0.000
+703,O,PM,3237,North Rd WB Station,Sunday,0.615,8.000,0.481,6.250,5.500
+703,O,PM,3238,Larch Way WB Station,Sunday,0.958,11.500,0.729,8.750,6.083
+703,O,PM,3239,Ash Way Park & Ride Station,Sunday,1.229,14.750,1.396,16.750,6.208
+703,O,PM,3240,Swamp Creek Park & Ride WB Station,Sunday,0.750,9.000,0.958,11.500,6.000
+703,O,PM,3242,180th Pl SW WB Station,Sunday,0.521,6.250,0.292,3.500,6.229
+703,O,PM,3243,188th St SW WB Station,Sunday,5.438,65.250,2.042,24.500,9.625
+703,O,PM,3224,McCollum Park Park & Ride Station,Sunday,2.771,33.250,0.000,0.000,2.771
+703,O,PM,3046,Trillium Blvd SB Station,Sunday,0.896,10.750,0.125,1.500,3.542
+703,O,PM,3047,153rd St SE SB Station,Sunday,0.979,11.750,0.146,1.750,4.375
+703,O,PM,3236,Mill Creek Blvd WB Station,Sunday,1.750,21.000,0.521,6.250,5.604
+703,O,XEV,3244,Lynnwood City Center WB Station,Sunday,1.917,17.250,2.917,26.250,6.972
+703,O,XEV,3246,Hwy 99 WB Station,Sunday,0.444,4.000,3.917,35.250,3.500
+703,O,XEV,3222,Edmonds College Transit Center Station,Sunday,0.000,0.000,3.500,31.500,0.000
+703,O,XEV,3238,Larch Way WB Station,Sunday,1.062,8.500,0.500,4.000,4.562
+703,O,XEV,3239,Ash Way Park & Ride Station,Sunday,0.750,6.000,1.062,8.500,4.250
+703,O,XEV,3240,Swamp Creek Park & Ride WB Station,Sunday,0.312,2.500,1.094,8.750,3.469
+703,O,XEV,3242,180th Pl SW WB Station,Sunday,0.281,2.250,0.188,1.500,3.562
+703,O,XEV,3243,188th St SW WB Station,Sunday,5.031,40.250,0.469,3.750,8.125
+703,O,XEV,3224,McCollum Park Park & Ride Station,Sunday,1.607,11.250,0.000,0.000,1.607
+703,O,XEV,3046,Trillium Blvd SB Station,Sunday,0.750,5.250,0.071,0.500,2.286
+703,O,XEV,3047,153rd St SE SB Station,Sunday,0.750,5.250,0.107,0.750,2.929
+703,O,XEV,3236,Mill Creek Blvd WB Station,Sunday,1.464,10.250,0.214,1.500,4.179
+703,O,XEV,3237,North Rd WB Station,Sunday,0.429,3.000,0.500,3.500,4.107

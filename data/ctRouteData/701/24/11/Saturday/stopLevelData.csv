@@ -1,0 +1,181 @@
+SERVICE_RTE_NUM,INBD_OUTBD_CD,DAY_PART_CD,STOP_ID,STOP_NAME,DAY_TYPE,AVG_TRIP_BOARDINGS,AVG_TOTAL_BOARDINGS,AVG_TRIP_ALIGHTINGS,AVG_TOTAL_ALIGHTINGS,AVG_TRIP_DEPARTING_LOAD
+701,I,AM,3382,Shoreline North/185th Station Bay 1,Saturday,2.712,43.400,0.000,0.000,2.712
+701,I,AM,3313,Aurora Village Transit Center Bay 12,Saturday,3.513,56.200,0.300,4.800,5.925
+701,I,AM,2747,238th St SW NB Station,Saturday,0.887,14.200,0.312,5.000,6.500
+701,I,AM,2753,Gateway NB Station at 216th St SW,Saturday,0.938,15.000,0.588,9.400,6.850
+701,I,AM,2761,Heron NB Station at 200th St SW,Saturday,0.800,12.800,0.275,4.400,7.025
+701,I,AM,3247,196th St SW NB Station,Saturday,1.300,20.800,1.113,17.800,7.213
+701,I,AM,2767,Cherry Hill NB Station at 176th St SW,Saturday,0.627,9.400,0.787,11.800,7.360
+701,I,AM,2777,148th St SW NB Station,Saturday,1.400,21.000,0.533,8.000,8.227
+701,I,AM,2779,Lincoln Way NB Station,Saturday,0.853,12.800,0.333,5.000,8.747
+701,I,AM,2781,Airport Road NB Station,Saturday,2.720,40.800,1.640,24.600,9.533
+701,I,AM,2783,112th St SW NB Station,Saturday,0.947,14.200,0.493,7.400,9.813
+701,I,AM,2787,4th Ave W NB Station,Saturday,1.320,19.800,1.840,27.600,9.293
+701,I,AM,2795,Casino Rd NB Station,Saturday,1.357,19.000,1.743,24.400,9.271
+701,I,AM,2807,Madison St NB Station,Saturday,0.514,7.200,0.900,12.600,8.886
+701,I,AM,2815,50th St NB Station,Saturday,0.357,5.000,0.686,9.600,8.557
+701,I,AM,2819,40th St NB Station,Saturday,0.471,6.600,0.629,8.800,8.129
+701,I,AM,2835,Colby Ave NB Station,Saturday,0.286,4.000,2.243,31.400,5.729
+701,I,AM,2838,Everett Station Bay G1,Saturday,0.000,0.000,6.046,78.600,0.000
+701,I,MID,2835,Colby Ave NB Station,Saturday,0.317,7.600,3.592,86.200,6.592
+701,I,MID,2838,Everett Station Bay G1,Saturday,0.000,0.000,6.658,159.800,0.000
+701,I,MID,2795,Casino Rd NB Station,Saturday,2.042,49.000,5.242,125.800,11.767
+701,I,MID,2807,Madison St NB Station,Saturday,1.200,28.800,1.950,46.800,10.758
+701,I,MID,2815,50th St NB Station,Saturday,1.150,27.600,1.650,39.600,10.100
+701,I,MID,2819,40th St NB Station,Saturday,0.550,13.200,1.142,27.400,9.608
+701,I,MID,2767,Cherry Hill NB Station at 176th St SW,Saturday,1.983,47.600,2.208,53.000,13.658
+701,I,MID,2777,148th St SW NB Station,Saturday,2.608,62.600,1.950,46.800,14.317
+701,I,MID,2779,Lincoln Way NB Station,Saturday,1.883,45.200,1.025,24.600,15.025
+701,I,MID,2781,Airport Road NB Station,Saturday,4.520,113.000,3.352,83.800,15.496
+701,I,MID,2783,112th St SW NB Station,Saturday,1.667,40.000,1.583,38.000,16.042
+701,I,MID,2787,4th Ave W NB Station,Saturday,2.375,57.000,3.625,87.000,14.792
+701,I,MID,3382,Shoreline North/185th Station Bay 1,Saturday,4.600,115.000,0.000,0.000,4.600
+701,I,MID,3313,Aurora Village Transit Center Bay 12,Saturday,6.483,155.600,0.950,22.800,10.033
+701,I,MID,2747,238th St SW NB Station,Saturday,1.467,35.200,0.958,23.000,10.542
+701,I,MID,2753,Gateway NB Station at 216th St SW,Saturday,1.883,45.200,1.058,25.400,11.367
+701,I,MID,2761,Heron NB Station at 200th St SW,Saturday,0.960,24.000,0.976,24.400,10.856
+701,I,MID,3247,196th St SW NB Station,Saturday,4.216,105.400,1.624,40.600,13.312
+701,I,PM,2815,50th St NB Station,Saturday,1.412,24.000,1.976,33.600,11.106
+701,I,PM,2819,40th St NB Station,Saturday,0.847,14.400,1.306,22.200,10.576
+701,I,PM,2835,Colby Ave NB Station,Saturday,0.400,6.400,4.463,71.400,7.125
+701,I,PM,2838,Everett Station Bay G1,Saturday,0.024,0.400,6.894,117.200,-0.165
+701,I,PM,2781,Airport Road NB Station,Saturday,4.918,83.600,4.365,74.200,16.847
+701,I,PM,2783,112th St SW NB Station,Saturday,1.938,31.000,2.212,35.400,17.688
+701,I,PM,2787,4th Ave W NB Station,Saturday,1.475,23.600,3.275,52.400,15.887
+701,I,PM,2795,Casino Rd NB Station,Saturday,2.950,47.200,5.600,89.600,13.238
+701,I,PM,2807,Madison St NB Station,Saturday,1.012,17.200,1.941,33.000,11.447
+701,I,PM,2761,Heron NB Station at 200th St SW,Saturday,1.224,20.800,1.141,19.400,11.647
+701,I,PM,3247,196th St SW NB Station,Saturday,5.912,94.600,1.812,29.000,16.562
+701,I,PM,2767,Cherry Hill NB Station at 176th St SW,Saturday,2.375,38.000,2.375,38.000,16.700
+701,I,PM,2777,148th St SW NB Station,Saturday,3.062,49.000,2.337,37.400,17.425
+701,I,PM,2779,Lincoln Way NB Station,Saturday,1.518,25.800,1.729,29.400,16.271
+701,I,PM,3313,Aurora Village Transit Center Bay 12,Saturday,7.025,112.400,1.337,21.400,11.162
+701,I,PM,2747,238th St SW NB Station,Saturday,1.863,29.800,1.150,18.400,11.875
+701,I,PM,2753,Gateway NB Station at 216th St SW,Saturday,1.825,29.200,1.512,24.200,12.100
+701,I,PM,3382,Shoreline North/185th Station Bay 1,Saturday,5.560,83.400,0.000,0.000,5.560
+701,I,XEV,2807,Madison St NB Station,Saturday,0.760,7.600,1.660,16.600,9.360
+701,I,XEV,2815,50th St NB Station,Saturday,1.120,11.200,1.660,16.600,8.820
+701,I,XEV,2819,40th St NB Station,Saturday,0.400,4.000,1.620,16.200,7.860
+701,I,XEV,2835,Colby Ave NB Station,Saturday,0.280,2.800,3.140,31.400,5.080
+701,I,XEV,2838,Everett Station Bay G1,Saturday,0.000,0.000,4.980,49.800,0.000
+701,I,XEV,2783,112th St SW NB Station,Saturday,1.360,13.600,1.400,14.000,13.200
+701,I,XEV,2787,4th Ave W NB Station,Saturday,1.020,10.200,1.920,19.200,12.120
+701,I,XEV,2795,Casino Rd NB Station,Saturday,2.180,21.800,4.100,41.000,10.200
+701,I,XEV,2753,Gateway NB Station at 216th St SW,Saturday,1.520,15.200,1.360,13.600,9.320
+701,I,XEV,2761,Heron NB Station at 200th St SW,Saturday,0.540,5.400,0.580,5.800,9.300
+701,I,XEV,3247,196th St SW NB Station,Saturday,5.120,51.200,1.320,13.200,13.180
+701,I,XEV,2767,Cherry Hill NB Station at 176th St SW,Saturday,2.422,21.800,1.689,15.200,15.222
+701,I,XEV,2777,148th St SW NB Station,Saturday,1.822,16.400,2.333,21.000,14.711
+701,I,XEV,2779,Lincoln Way NB Station,Saturday,1.340,13.400,1.560,15.600,13.240
+701,I,XEV,2781,Airport Road NB Station,Saturday,3.940,39.400,5.180,51.800,12.640
+701,I,XEV,3382,Shoreline North/185th Station Bay 1,Saturday,4.356,39.200,0.000,0.000,4.356
+701,I,XEV,3313,Aurora Village Transit Center Bay 12,Saturday,5.533,49.800,0.756,6.800,9.133
+701,I,XEV,2747,238th St SW NB Station,Saturday,1.711,15.400,0.822,7.400,10.022
+701,I,XNT,2807,Madison St NB Station,Saturday,0.640,3.200,2.240,11.200,6.320
+701,I,XNT,2815,50th St NB Station,Saturday,0.280,1.400,1.000,5.000,5.600
+701,I,XNT,2819,40th St NB Station,Saturday,0.240,1.200,0.720,3.600,5.120
+701,I,XNT,2835,Colby Ave NB Station,Saturday,0.400,2.000,2.040,10.200,3.480
+701,I,XNT,2838,Everett Station Bay G1,Saturday,0.067,0.400,3.133,18.800,0.000
+701,I,XNT,2761,Heron NB Station at 200th St SW,Saturday,0.500,2.000,0.650,2.600,7.400
+701,I,XNT,3247,196th St SW NB Station,Saturday,3.700,14.800,0.850,3.400,10.550
+701,I,XNT,2767,Cherry Hill NB Station at 176th St SW,Saturday,1.350,5.400,0.950,3.800,11.300
+701,I,XNT,2777,148th St SW NB Station,Saturday,2.500,10.000,1.850,7.400,11.950
+701,I,XNT,2779,Lincoln Way NB Station,Saturday,0.600,2.400,1.200,4.800,11.350
+701,I,XNT,2781,Airport Road NB Station,Saturday,3.750,15.000,4.950,19.800,10.150
+701,I,XNT,2783,112th St SW NB Station,Saturday,0.650,2.600,0.750,3.000,10.050
+701,I,XNT,2787,4th Ave W NB Station,Saturday,0.480,2.400,1.240,6.200,7.640
+701,I,XNT,2795,Casino Rd NB Station,Saturday,1.520,7.600,2.640,13.200,6.520
+701,I,XNT,3382,Shoreline North/185th Station Bay 1,Saturday,4.800,14.400,0.000,0.000,4.800
+701,I,XNT,3313,Aurora Village Transit Center Bay 12,Saturday,3.267,9.800,0.667,2.000,7.400
+701,I,XNT,2747,238th St SW NB Station,Saturday,1.000,3.000,0.867,2.600,7.533
+701,I,XNT,2753,Gateway NB Station at 216th St SW,Saturday,1.600,4.800,0.200,0.600,8.933
+701,O,AM,2838,Everett Station Bay G1,Saturday,4.424,75.200,0.000,0.000,4.424
+701,O,AM,2836,Wetmore Ave SB Station,Saturday,2.294,39.000,0.329,5.600,6.000
+701,O,AM,2820,41st St SB Station,Saturday,1.100,17.600,0.438,7.000,7.000
+701,O,AM,2816,50th St SB Station,Saturday,0.762,12.200,0.250,4.000,7.513
+701,O,AM,2810,Pecks Dr SB Station,Saturday,1.188,19.000,0.475,7.600,8.225
+701,O,AM,2796,Casino Rd SB Station,Saturday,2.562,41.000,1.212,19.400,9.575
+701,O,AM,2788,4th Ave W SB Station,Saturday,2.138,34.200,1.950,31.200,9.412
+701,O,AM,2784,112th St SW SB Station,Saturday,1.400,22.400,0.662,10.600,9.750
+701,O,AM,2782,Airport Road SB Station,Saturday,2.360,35.400,2.787,41.800,9.813
+701,O,AM,2780,Lincoln Way SB Station,Saturday,1.013,15.200,0.880,13.200,9.947
+701,O,AM,2778,148th St SW SB Station,Saturday,1.253,18.800,1.080,16.200,10.120
+701,O,AM,2770,International SB Station at 174th Pl SW,Saturday,1.040,15.600,0.667,10.000,10.107
+701,O,AM,2764,Crossroads SB Station at 196th St SW,Saturday,0.773,11.600,3.093,46.400,7.480
+701,O,AM,2760,College SB Station at 204th St SW,Saturday,0.686,9.600,0.271,3.800,8.286
+701,O,AM,2754,216th St SW SB Station,Saturday,0.971,13.600,1.814,25.400,7.443
+701,O,AM,2748,238th St SW SB Station,Saturday,0.629,8.800,1.057,14.800,7.014
+701,O,AM,2742,Aurora Village Transit Center Bay 9,Saturday,0.429,6.000,4.086,57.200,2.929
+701,O,AM,3267,Shoreline North/185th Station Bay 2,Saturday,0.000,0.000,3.108,40.400,-0.154
+701,O,MID,3267,Shoreline North/185th Station Bay 2,Saturday,0.000,0.000,4.650,111.600,-0.108
+701,O,MID,2770,International SB Station at 174th Pl SW,Saturday,2.048,51.200,2.312,57.800,14.592
+701,O,MID,2764,Crossroads SB Station at 196th St SW,Saturday,2.032,50.800,5.032,125.800,11.352
+701,O,MID,2760,College SB Station at 204th St SW,Saturday,0.608,14.600,0.708,17.000,11.692
+701,O,MID,2754,216th St SW SB Station,Saturday,1.492,35.800,1.625,39.000,11.558
+701,O,MID,2748,238th St SW SB Station,Saturday,1.200,28.800,1.417,34.000,11.342
+701,O,MID,2742,Aurora Village Transit Center Bay 9,Saturday,1.136,28.400,7.520,188.000,4.280
+701,O,MID,2784,112th St SW SB Station,Saturday,2.400,57.600,1.467,35.200,17.050
+701,O,MID,2782,Airport Road SB Station,Saturday,3.467,83.200,4.725,113.400,15.892
+701,O,MID,2780,Lincoln Way SB Station,Saturday,1.392,33.400,1.617,38.800,15.667
+701,O,MID,2778,148th St SW SB Station,Saturday,2.000,48.000,2.433,58.400,15.233
+701,O,MID,2836,Wetmore Ave SB Station,Saturday,4.136,103.400,0.496,12.400,9.904
+701,O,MID,2820,41st St SB Station,Saturday,2.064,51.600,1.056,26.400,10.816
+701,O,MID,2816,50th St SB Station,Saturday,1.475,35.400,1.200,28.800,11.208
+701,O,MID,2810,Pecks Dr SB Station,Saturday,1.917,46.000,0.892,21.400,12.233
+701,O,MID,2796,Casino Rd SB Station,Saturday,5.725,137.400,2.642,63.400,15.317
+701,O,MID,2788,4th Ave W SB Station,Saturday,4.072,101.800,2.968,74.200,15.888
+701,O,MID,2838,Everett Station Bay G1,Saturday,6.184,154.600,0.000,0.000,6.184
+701,O,PM,3267,Shoreline North/185th Station Bay 2,Saturday,0.000,0.000,5.162,82.600,0.000
+701,O,PM,2764,Crossroads SB Station at 196th St SW,Saturday,2.953,50.200,5.412,92.000,11.459
+701,O,PM,2760,College SB Station at 204th St SW,Saturday,0.541,9.200,0.718,12.200,11.129
+701,O,PM,2754,216th St SW SB Station,Saturday,1.613,25.800,1.887,30.200,11.425
+701,O,PM,2748,238th St SW SB Station,Saturday,1.113,17.800,2.075,33.200,10.137
+701,O,PM,2742,Aurora Village Transit Center Bay 9,Saturday,1.529,26.000,6.706,114.000,4.953
+701,O,PM,2784,112th St SW SB Station,Saturday,1.500,24.000,1.900,30.400,17.225
+701,O,PM,2782,Airport Road SB Station,Saturday,4.388,70.200,5.037,80.600,16.462
+701,O,PM,2780,Lincoln Way SB Station,Saturday,1.188,19.000,2.200,35.200,15.562
+701,O,PM,2778,148th St SW SB Station,Saturday,1.863,29.800,3.325,53.200,14.100
+701,O,PM,2770,International SB Station at 174th Pl SW,Saturday,2.500,40.000,2.350,37.600,14.250
+701,O,PM,2816,50th St SB Station,Saturday,2.062,33.000,1.387,22.200,13.450
+701,O,PM,2810,Pecks Dr SB Station,Saturday,1.925,30.800,1.512,24.200,13.863
+701,O,PM,2796,Casino Rd SB Station,Saturday,5.575,89.200,3.587,57.400,14.838
+701,O,PM,2788,4th Ave W SB Station,Saturday,3.325,53.200,1.425,22.800,16.575
+701,O,PM,2838,Everett Station Bay G1,Saturday,8.293,124.400,0.000,0.000,8.293
+701,O,PM,2836,Wetmore Ave SB Station,Saturday,3.547,53.200,0.373,5.600,11.467
+701,O,PM,2820,41st St SB Station,Saturday,2.075,33.200,0.738,11.800,12.275
+701,O,XEV,2748,238th St SW SB Station,Saturday,1.000,10.000,1.580,15.800,9.880
+701,O,XEV,2742,Aurora Village Transit Center Bay 9,Saturday,1.020,10.200,5.860,58.600,5.100
+701,O,XEV,3267,Shoreline North/185th Station Bay 2,Saturday,0.000,0.000,5.300,53.000,0.000
+701,O,XEV,2764,Crossroads SB Station at 196th St SW,Saturday,2.489,22.400,3.644,32.800,10.156
+701,O,XEV,2760,College SB Station at 204th St SW,Saturday,0.400,3.600,0.422,3.800,10.733
+701,O,XEV,2754,216th St SW SB Station,Saturday,1.244,11.200,1.156,10.400,11.044
+701,O,XEV,2796,Casino Rd SB Station,Saturday,4.740,47.400,2.760,27.600,13.520
+701,O,XEV,2788,4th Ave W SB Station,Saturday,3.044,27.400,1.733,15.600,16.889
+701,O,XEV,2784,112th St SW SB Station,Saturday,1.267,11.400,1.489,13.400,16.667
+701,O,XEV,2782,Airport Road SB Station,Saturday,3.956,35.600,6.267,56.400,14.356
+701,O,XEV,2780,Lincoln Way SB Station,Saturday,1.156,10.400,1.689,15.200,13.822
+701,O,XEV,2778,148th St SW SB Station,Saturday,1.422,12.800,2.933,26.400,12.311
+701,O,XEV,2770,International SB Station at 174th Pl SW,Saturday,1.956,17.600,1.778,16.000,12.133
+701,O,XEV,2838,Everett Station Bay G1,Saturday,6.533,58.800,0.000,0.000,6.533
+701,O,XEV,2836,Wetmore Ave SB Station,Saturday,3.800,34.200,0.267,2.400,10.067
+701,O,XEV,2820,41st St SB Station,Saturday,1.533,13.800,0.600,5.400,11.000
+701,O,XEV,2816,50th St SB Station,Saturday,2.244,20.200,1.067,9.600,12.178
+701,O,XEV,2810,Pecks Dr SB Station,Saturday,1.511,13.600,1.156,10.400,12.311
+701,O,XNT,2764,Crossroads SB Station at 196th St SW,Saturday,2.360,11.800,2.880,14.400,8.360
+701,O,XNT,2760,College SB Station at 204th St SW,Saturday,0.440,2.200,0.400,2.000,8.400
+701,O,XNT,2754,216th St SW SB Station,Saturday,0.800,4.000,1.560,7.800,7.640
+701,O,XNT,2748,238th St SW SB Station,Saturday,0.480,2.400,1.760,8.800,6.360
+701,O,XNT,2742,Aurora Village Transit Center Bay 9,Saturday,0.720,3.600,4.280,21.400,2.800
+701,O,XNT,3267,Shoreline North/185th Station Bay 2,Saturday,0.033,0.200,2.567,15.400,0.000
+701,O,XNT,2796,Casino Rd SB Station,Saturday,3.850,15.400,1.700,6.800,9.950
+701,O,XNT,2788,4th Ave W SB Station,Saturday,2.050,8.200,0.850,3.400,11.450
+701,O,XNT,2784,112th St SW SB Station,Saturday,0.500,2.000,1.300,5.200,10.650
+701,O,XNT,2782,Airport Road SB Station,Saturday,3.100,12.400,3.850,15.400,9.900
+701,O,XNT,2780,Lincoln Way SB Station,Saturday,0.550,2.200,1.000,4.000,9.450
+701,O,XNT,2778,148th St SW SB Station,Saturday,1.150,4.600,2.900,11.600,7.700
+701,O,XNT,2770,International SB Station at 174th Pl SW,Saturday,1.280,6.400,1.080,5.400,7.000
+701,O,XNT,2838,Everett Station Bay G1,Saturday,4.800,14.400,0.000,0.000,4.800
+701,O,XNT,2836,Wetmore Ave SB Station,Saturday,2.067,6.200,0.600,1.800,6.267
+701,O,XNT,2820,41st St SB Station,Saturday,1.067,3.200,0.267,0.800,7.067
+701,O,XNT,2816,50th St SB Station,Saturday,1.200,3.600,1.000,3.000,8.000
+701,O,XNT,2810,Pecks Dr SB Station,Saturday,0.950,3.800,0.600,2.400,6.300

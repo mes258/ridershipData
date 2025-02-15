@@ -1,0 +1,131 @@
+SERVICE_RTE_NUM,INBD_OUTBD_CD,DAY_PART_CD,STOP_ID,STOP_NAME,DAY_TYPE,AVG_TRIP_BOARDINGS,AVG_TOTAL_BOARDINGS,AVG_TRIP_ALIGHTINGS,AVG_TOTAL_ALIGHTINGS,AVG_TRIP_DEPARTING_LOAD
+703,I,XNT,3222,Edmonds College Transit Center Bay 5,Weekday,1.111,13.333,0.000,0.000,1.111
+703,I,XNT,3225,Hwy 99 EB Station,Weekday,1.381,16.571,0.135,1.619,2.353
+703,I,XNT,3227,Lynnwood City Center Station Bay D5,Weekday,1.670,21.714,1.081,14.048,2.905
+703,I,XNT,3228,188th St SW EB Station,Weekday,0.359,4.667,0.300,3.905,2.967
+703,I,XNT,3229,180th Pl SW EB Station,Weekday,0.168,2.190,0.198,2.571,2.938
+703,I,XNT,3231,Swamp Creek Park & Ride EB Station,Weekday,0.385,5.000,0.762,9.905,2.549
+703,I,XNT,3239,Ash Way Park & Ride Bay 5,Weekday,0.264,3.429,0.736,9.571,2.077
+703,I,XNT,3233,Larch Way EB Station,Weekday,0.167,2.333,0.282,3.952,1.956
+703,I,XNT,3234,North Rd EB Station,Weekday,0.048,0.667,0.218,3.048,1.935
+703,I,XNT,3029,164th St SE NB Station,Weekday,0.160,2.238,0.697,9.762,1.408
+703,I,XNT,3028,153rd St SE NB Station,Weekday,0.034,0.476,0.190,2.667,1.252
+703,I,XNT,3027,Trillium Blvd NB Station,Weekday,0.010,0.143,0.241,3.381,1.020
+703,I,XNT,3224,McCollum Park Park & Ride Bay 4,Weekday,0.000,0.000,1.020,14.286,0.000
+703,I,AM,3233,Larch Way EB Station,Weekday,0.240,7.429,0.300,9.286,1.499
+703,I,AM,3234,North Rd EB Station,Weekday,0.318,9.857,0.071,2.190,1.740
+703,I,AM,3029,164th St SE NB Station,Weekday,0.056,1.619,0.583,16.905,1.323
+703,I,AM,3028,153rd St SE NB Station,Weekday,0.066,1.905,0.360,10.429,1.016
+703,I,AM,3027,Trillium Blvd NB Station,Weekday,0.011,0.333,0.433,12.571,0.593
+703,I,AM,3224,McCollum Park Park & Ride Bay 4,Weekday,0.003,0.095,0.552,16.571,0.000
+703,I,AM,3227,Lynnwood City Center Station Bay D5,Weekday,1.299,41.571,1.137,36.381,2.399
+703,I,AM,3228,188th St SW EB Station,Weekday,0.069,2.143,1.018,31.571,1.495
+703,I,AM,3229,180th Pl SW EB Station,Weekday,0.121,3.762,0.054,1.667,1.525
+703,I,AM,3231,Swamp Creek Park & Ride EB Station,Weekday,0.348,11.143,0.113,3.619,1.668
+703,I,AM,3239,Ash Way Park & Ride Bay 5,Weekday,0.286,8.857,0.375,11.619,1.618
+703,I,AM,3222,Edmonds College Transit Center Bay 5,Weekday,1.158,37.048,0.000,0.000,1.158
+703,I,AM,3225,Hwy 99 EB Station,Weekday,1.189,38.048,0.115,3.667,2.232
+703,I,MID,3224,McCollum Park Park & Ride Bay 4,Weekday,0.028,1.524,0.883,48.571,-0.001
+703,I,MID,3233,Larch Way EB Station,Weekday,0.224,12.095,0.459,24.810,2.131
+703,I,MID,3234,North Rd EB Station,Weekday,0.175,9.429,0.205,11.095,2.066
+703,I,MID,3029,164th St SE NB Station,Weekday,0.115,6.333,0.714,39.286,1.416
+703,I,MID,3028,153rd St SE NB Station,Weekday,0.081,4.381,0.418,22.571,1.094
+703,I,MID,3027,Trillium Blvd NB Station,Weekday,0.031,1.667,0.250,13.476,0.873
+703,I,MID,3231,Swamp Creek Park & Ride EB Station,Weekday,0.259,14.000,0.478,25.810,2.750
+703,I,MID,3239,Ash Way Park & Ride Bay 5,Weekday,0.296,16.286,0.581,31.952,2.391
+703,I,MID,3227,Lynnwood City Center Station Bay D5,Weekday,2.518,135.952,2.541,137.190,5.279
+703,I,MID,3228,188th St SW EB Station,Weekday,0.468,25.286,2.490,134.476,3.182
+703,I,MID,3229,180th Pl SW EB Station,Weekday,0.086,4.714,0.231,12.714,2.906
+703,I,MID,3222,Edmonds College Transit Center Bay 5,Weekday,3.774,203.810,0.000,0.000,3.774
+703,I,MID,3225,Hwy 99 EB Station,Weekday,2.322,125.381,0.619,33.429,5.477
+703,I,PM,3224,McCollum Park Park & Ride Bay 4,Weekday,0.009,0.333,1.237,47.000,-0.014
+703,I,PM,3029,164th St SE NB Station,Weekday,0.244,9.286,1.307,49.667,2.041
+703,I,PM,3028,153rd St SE NB Station,Weekday,0.115,4.381,0.549,20.857,1.624
+703,I,PM,3027,Trillium Blvd NB Station,Weekday,0.046,1.714,0.480,17.762,1.230
+703,I,PM,3233,Larch Way EB Station,Weekday,0.296,11.238,1.068,40.571,3.579
+703,I,PM,3234,North Rd EB Station,Weekday,0.169,6.429,0.659,25.048,3.112
+703,I,PM,3239,Ash Way Park & Ride Bay 5,Weekday,0.561,20.762,1.036,38.333,4.385
+703,I,PM,3228,188th St SW EB Station,Weekday,1.194,44.190,2.698,99.810,6.126
+703,I,PM,3229,180th Pl SW EB Station,Weekday,0.113,4.190,0.516,19.095,5.732
+703,I,PM,3231,Swamp Creek Park & Ride EB Station,Weekday,0.385,14.238,1.268,46.905,4.852
+703,I,PM,3227,Lynnwood City Center Station Bay D5,Weekday,4.613,170.667,2.607,96.476,7.598
+703,I,PM,3222,Edmonds College Transit Center Bay 5,Weekday,3.705,133.381,0.000,0.000,3.705
+703,I,PM,3225,Hwy 99 EB Station,Weekday,2.497,89.905,0.638,22.952,5.549
+703,I,XEV,3224,McCollum Park Park & Ride Bay 4,Weekday,0.000,0.000,0.907,19.952,-0.019
+703,I,XEV,3029,164th St SE NB Station,Weekday,0.156,3.286,0.959,20.143,1.295
+703,I,XEV,3028,153rd St SE NB Station,Weekday,0.075,1.571,0.215,4.524,1.168
+703,I,XEV,3027,Trillium Blvd NB Station,Weekday,0.032,0.714,0.292,6.429,0.870
+703,I,XEV,3233,Larch Way EB Station,Weekday,0.193,4.048,0.644,13.524,2.279
+703,I,XEV,3234,North Rd EB Station,Weekday,0.056,1.238,0.238,5.238,1.952
+703,I,XEV,3229,180th Pl SW EB Station,Weekday,0.060,1.143,0.459,8.714,3.865
+703,I,XEV,3231,Swamp Creek Park & Ride EB Station,Weekday,0.283,5.381,0.659,12.524,3.541
+703,I,XEV,3239,Ash Way Park & Ride Bay 5,Weekday,0.248,4.952,0.843,16.857,2.836
+703,I,XEV,3225,Hwy 99 EB Station,Weekday,1.459,27.714,0.276,5.238,2.825
+703,I,XEV,3227,Lynnwood City Center Station Bay D5,Weekday,2.291,41.238,1.272,22.905,4.019
+703,I,XEV,3228,188th St SW EB Station,Weekday,0.940,17.857,0.930,17.667,4.013
+703,I,XEV,3222,Edmonds College Transit Center Bay 5,Weekday,1.730,31.143,0.000,0.000,1.730
+703,O,XNT,3224,McCollum Park Park & Ride Bay 4,Weekday,0.771,7.714,0.000,0.000,0.771
+703,O,XNT,3046,Trillium Blvd SB Station,Weekday,0.181,1.810,0.010,0.095,0.929
+703,O,XNT,3047,153rd St SE SB Station,Weekday,0.471,4.714,0.005,0.048,1.395
+703,O,XNT,3236,Mill Creek Blvd WB Station,Weekday,0.887,9.762,0.108,1.190,2.069
+703,O,XNT,3237,North Rd WB Station,Weekday,0.226,2.714,0.115,1.381,2.258
+703,O,XNT,3238,Larch Way WB Station,Weekday,0.448,5.381,0.147,1.762,2.560
+703,O,XNT,3239,Ash Way Park & Ride Bay 5,Weekday,0.403,4.429,0.247,2.714,2.658
+703,O,XNT,3240,Swamp Creek Park & Ride WB Station,Weekday,0.351,3.857,0.394,4.333,2.615
+703,O,XNT,3242,180th Pl SW WB Station,Weekday,0.113,1.238,0.030,0.333,2.697
+703,O,XNT,3243,188th St SW WB Station,Weekday,1.000,11.000,0.160,1.762,3.537
+703,O,XNT,3244,Lynnwood City Center Station Bay C5,Weekday,0.894,11.619,1.484,19.286,2.418
+703,O,XNT,3246,Hwy 99 WB Station,Weekday,0.171,2.048,1.290,15.476,1.754
+703,O,XNT,3222,Edmonds College Transit Center Bay 5,Weekday,0.000,0.000,1.754,21.048,0.000
+703,O,AM,3244,Lynnwood City Center Station Bay C5,Weekday,1.476,47.238,3.112,99.571,2.982
+703,O,AM,3246,Hwy 99 WB Station,Weekday,0.166,5.143,0.949,29.429,2.223
+703,O,AM,3222,Edmonds College Transit Center Bay 5,Weekday,0.000,0.000,2.146,66.524,0.000
+703,O,AM,3239,Ash Way Park & Ride Bay 5,Weekday,0.597,19.095,0.302,9.667,3.708
+703,O,AM,3240,Swamp Creek Park & Ride WB Station,Weekday,1.049,33.571,0.173,5.524,4.405
+703,O,AM,3242,180th Pl SW WB Station,Weekday,0.412,12.762,0.052,1.619,4.874
+703,O,AM,3243,188th St SW WB Station,Weekday,0.395,12.238,0.289,8.952,4.954
+703,O,AM,3224,McCollum Park Park & Ride Bay 4,Weekday,0.627,21.333,0.000,0.000,0.627
+703,O,AM,3046,Trillium Blvd SB Station,Weekday,0.248,8.190,0.007,0.238,0.841
+703,O,AM,3047,153rd St SE SB Station,Weekday,0.605,19.952,0.019,0.619,1.427
+703,O,AM,3236,Mill Creek Blvd WB Station,Weekday,0.791,26.905,0.049,1.667,2.127
+703,O,AM,3237,North Rd WB Station,Weekday,0.521,17.190,0.056,1.857,2.618
+703,O,AM,3238,Larch Way WB Station,Weekday,0.805,26.571,0.152,5.000,3.227
+703,O,MID,3222,Edmonds College Transit Center Bay 5,Weekday,0.000,0.000,2.923,163.667,0.000
+703,O,MID,3244,Lynnwood City Center Station Bay C5,Weekday,2.108,115.952,2.048,112.619,4.354
+703,O,MID,3246,Hwy 99 WB Station,Weekday,0.360,19.810,1.779,97.857,2.940
+703,O,MID,3239,Ash Way Park & Ride Bay 5,Weekday,0.701,39.238,0.398,22.286,3.306
+703,O,MID,3240,Swamp Creek Park & Ride WB Station,Weekday,0.662,37.095,0.293,16.381,3.735
+703,O,MID,3242,180th Pl SW WB Station,Weekday,0.365,20.429,0.148,8.286,3.929
+703,O,MID,3243,188th St SW WB Station,Weekday,1.135,62.429,0.882,48.524,4.229
+703,O,MID,3237,North Rd WB Station,Weekday,0.493,28.095,0.180,10.286,2.683
+703,O,MID,3238,Larch Way WB Station,Weekday,0.552,31.476,0.241,13.762,3.015
+703,O,MID,3046,Trillium Blvd SB Station,Weekday,0.631,34.714,0.029,1.571,1.518
+703,O,MID,3047,153rd St SE SB Station,Weekday,0.521,28.143,0.167,9.000,1.864
+703,O,MID,3236,Mill Creek Blvd WB Station,Weekday,0.837,45.190,0.213,11.476,2.489
+703,O,MID,3224,McCollum Park Park & Ride Bay 4,Weekday,0.915,49.429,0.000,0.000,0.915
+703,O,PM,3222,Edmonds College Transit Center Bay 5,Weekday,0.004,0.143,2.513,95.476,0.000
+703,O,PM,3243,188th St SW WB Station,Weekday,2.745,101.571,0.878,32.476,5.295
+703,O,PM,3244,Lynnwood City Center Station Bay C5,Weekday,2.301,87.429,2.853,108.429,4.598
+703,O,PM,3246,Hwy 99 WB Station,Weekday,0.465,17.667,2.561,97.333,2.497
+703,O,PM,3242,180th Pl SW WB Station,Weekday,0.196,7.048,0.212,7.619,3.467
+703,O,PM,3239,Ash Way Park & Ride Bay 5,Weekday,0.725,26.810,0.416,15.381,3.404
+703,O,PM,3240,Swamp Creek Park & Ride WB Station,Weekday,0.381,13.714,0.512,18.429,3.427
+703,O,PM,3046,Trillium Blvd SB Station,Weekday,0.607,21.238,0.046,1.619,1.650
+703,O,PM,3047,153rd St SE SB Station,Weekday,0.684,23.952,0.117,4.095,2.273
+703,O,PM,3236,Mill Creek Blvd WB Station,Weekday,1.158,39.381,0.207,7.048,3.289
+703,O,PM,3237,North Rd WB Station,Weekday,0.250,8.762,0.378,13.238,3.061
+703,O,PM,3238,Larch Way WB Station,Weekday,0.547,19.143,0.327,11.429,3.222
+703,O,PM,3224,McCollum Park Park & Ride Bay 4,Weekday,1.112,37.810,0.000,0.000,1.112
+703,O,XEV,3244,Lynnwood City Center Station Bay C5,Weekday,1.511,28.714,2.381,45.238,3.990
+703,O,XEV,3246,Hwy 99 WB Station,Weekday,0.263,5.000,2.075,39.429,2.140
+703,O,XEV,3222,Edmonds College Transit Center Bay 5,Weekday,0.000,0.000,2.160,41.048,-0.010
+703,O,XEV,3238,Larch Way WB Station,Weekday,0.405,7.286,0.212,3.810,1.950
+703,O,XEV,3239,Ash Way Park & Ride Bay 5,Weekday,0.349,6.286,0.270,4.857,2.193
+703,O,XEV,3240,Swamp Creek Park & Ride WB Station,Weekday,0.291,5.238,0.365,6.571,2.132
+703,O,XEV,3242,180th Pl SW WB Station,Weekday,0.110,2.095,0.118,2.238,2.025
+703,O,XEV,3243,188th St SW WB Station,Weekday,2.905,55.190,0.183,3.476,4.754
+703,O,XEV,3224,McCollum Park Park & Ride Bay 4,Weekday,0.688,12.381,0.000,0.000,0.688
+703,O,XEV,3046,Trillium Blvd SB Station,Weekday,0.228,4.095,0.021,0.381,0.884
+703,O,XEV,3047,153rd St SE SB Station,Weekday,0.339,6.095,0.063,1.143,1.159
+703,O,XEV,3236,Mill Creek Blvd WB Station,Weekday,0.692,13.143,0.088,1.667,1.694
+703,O,XEV,3237,North Rd WB Station,Weekday,0.138,2.476,0.161,2.905,1.619
