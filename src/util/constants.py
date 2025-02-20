@@ -1,3 +1,4 @@
+# TODO: Update to a general "named Routes" option that includes swift
 rapidRideMappings = {
   ("a", "671", "A Line"),
   ("b", "672", "B Line"),

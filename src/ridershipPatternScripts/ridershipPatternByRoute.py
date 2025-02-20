@@ -1,6 +1,7 @@
 from accessModules import routeDataAccessModule
 from accessModules import stopDataAccessModule
 from graphingScripts import graphModule
+import routeSettings
 from util import util
 
 # Input: 
@@ -8,10 +9,14 @@ from util import util
 #   Year: Two digit year (eg: "24")
 #   Service period: For KCM routes, put the SERVICE_CHANGE_NUM (eg: "213" or "241"). For CT routes, put the 2 digit month (eg: "08" or "11")
 #   Day Type: "Weekday", "Saturday", or "Sunday". KCM only has "Weekday" data
+#   Agency Id: KCM: 1, CT: 29, ST: 40
 routeNum = "7"
 year = "24"
 servicePeriod = "241"
 dayType = "Weekday"
+agencyId = 1
+
+route = routeSettings.RouteSettings(routeNum, year, servicePeriod, dayType, agencyId)
 
 # Convert the RR route name to the underllying route number: a = 671, b = 672, etc. 
 for letter, rapidRideRouteNum, shortName in stopDataAccessModule.rapidRideMappings:

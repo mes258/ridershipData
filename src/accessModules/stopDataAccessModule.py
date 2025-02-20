@@ -1,15 +1,13 @@
 import json
 import requests
 from util import constants
+from ridershipPatternScripts import routeSettings
 
 class StopDataAccessModule:
-  def __init__(self, routeNum, year, servicePeriod, dayType):
-    self.routeNum = routeNum
-    self.year = year
-    self.servicePeriod = servicePeriod
-    self.dayType = dayType
-    self.filePath = "{0}/{1}/{2}/{3}/stops.json".format(self.routeNum, self.year, self.servicePeriod, self.dayType)
-    self.latestFilePath = "{0}/stops.json".format(self.routeNum)
+  def __init__(self, routeSettings: routeSettings.RouteSettings):
+    self.routeSettings = routeSettings
+    self.filePath = "../../data/{0}RouteData/{1}/{2}/{3}/{4}/stops.json".format(constants[self.routeSettings.agencyId], self.routeSettings.routeNum, self.routeSettings.year, self.routeSettings.servicePeriod, self.routeSettings.dayType)
+    self.latestFilePath = "../../data/{0}RouteData/{1}/stops.json".format(constants[self.routeSettings.agencyId], self.routeSettings.routeNum)
 
   # The stop data for a route can change with a service changee, but it's generally fairly stable. 
   # To account for this, stop data is stored in at least two locations: 

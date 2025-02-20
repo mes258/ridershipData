@@ -1,16 +1,13 @@
 import csv
 import stopDataAccessModule
 from util import constants
+from ridershipPatternScripts import routeSettings
 
 # Helper functions for getting data from the csvs. 
 class RouteDataAccessModule:
-  def __init__(self, routeNum, year, servicePeriod, dayType, agencyId):
-    self.routeNum = routeNum
-    self.year = year
-    self.servicePeriod = servicePeriod
-    self.dayType = dayType
-    self.agencyId = agencyId
-    self.filePath = "../../data/{0}RouteData/{1}/{2}/{3}/{4}/stopLevelData.csv".format(constants[agencyId], self.routeNum, self.year, self.servicePeriod, self.dayType)
+  def __init__(self, routeSettings: routeSettings.RouteSettings):
+    self.routeSettings = routeSettings
+    self.filePath = "../../data/{0}RouteData/{1}/{2}/{3}/{4}/stopLevelData.csv".format(constants[self.routeSettings.agencyId], self.routeSettings.routeNum, self.routeSettings.year, self.routeSettings.servicePeriod, self.routeSettings.dayType)
       
   # Get all rows from the file path
   def getStopLevelData(self):
@@ -70,11 +67,12 @@ class RouteDataAccessModule:
     return averages
   
   # Get the human readable route number (eg: 7 or E Line)
+  # TODO: add swift support. 
   def getFriendlyRouteNum(self):
     for letter, rapidRideRouteNum, shortName in stopDataAccessModule.rapidRideMappings:
-      if self.routeNum == rapidRideRouteNum:
+      if self.routeSettings.routeNum == rapidRideRouteNum:
         return shortName
-    return self.routeNum
+    return self.routeSettings.routeNum
   
   # Use the cross streets to get the stop name. (not always accurate)
   def getStopNameFromStopId(self, stopId):
