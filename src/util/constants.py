@@ -25,8 +25,16 @@ hardCodedStops = {
   "703_0_24_08": ["29_3224","29_3046","29_3047","29_3236","29_3237","29_3238","29_3239","29_3240","29_3242","29_3243","29_3244","29_3246","29_3222"]
 }
 
+kcmAgencyId = 1
+ctAgencyId = 29
+stAgencyId = 40
 agencyIdAndInitials = {
-  "1": "kcm",
-  "29": "ct",
-  "40": "st"
+  kcmAgencyId: "kcm",
+  ctAgencyId: "ct",
+  stAgencyId: "st"
 }
+
+kcmServiceChangeNumbers = ["191","192","193","201","202","203","211","212","213","221","222","223","231","232","233","241","242","251"]
+
+inboundDirection = "I"
+outboundDirection = "O"

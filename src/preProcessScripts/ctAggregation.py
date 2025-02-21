@@ -78,7 +78,7 @@ def aggregateBoardingAndAlightingData(data):
   unique_dates = {"Weekday": set(), "Saturday": set(), "Sunday": set()}
 
   for row in data:
-      key = (row["ROUTE_ID"], row["DIRECTION"], row["TIME_PERIOD"], row["STOP_ID"], row["STOP_NAME"], row["DAY_TYPE"])
+      key = (row["ROUTE_ID"], row["DIRECTION"], row["TIME_PERIOD"], row["STOP_ID"], row["STOP_NAME"], row["DAY_TYPE"], row['STOP_ORDER_NUMBER'])
       aggregated_data[key]["total_alightings"] += row["ALIGHTINGS"]
       aggregated_data[key]["total_boardings"] += row["BOARDINGS"]
       aggregated_data[key]["total_departure_load"] += row["DEPARTURE_LOAD"]
@@ -91,7 +91,7 @@ def aggregateBoardingAndAlightingData(data):
   trip_loads = defaultdict(lambda: defaultdict(int))  # { (route, direction, day_type, trip_id) -> { stop_id -> departing_load } }
 
   for key, values in aggregated_data.items():
-      route, direction, time_period, stop_id, stop_name, day_type = key
+      route, direction, time_period, stop_id, stop_name, day_type, stop_order_number = key
       num_days = len(unique_dates[day_type])
       num_unique_trips = len(values["trip_counts"])
       
@@ -118,23 +118,28 @@ def writeOutput(outputData, routeId, year, month):
 
     with open(fileName, "w", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow(["SERVICE_RTE_NUM", "INBD_OUTBD_CD", "DAY_PART_CD", "STOP_ID", "STOP_NAME", "DAY_TYPE", "AVG_TRIP_BOARDINGS", "AVG_TOTAL_BOARDINGS", "AVG_TRIP_ALIGHTINGS", "AVG_TOTAL_ALIGHTINGS", "AVG_TRIP_DEPARTING_LOAD"])
+        writer.writerow(["SERVICE_RTE_NUM", "INBD_OUTBD_CD", "DAY_PART_CD", "STOP_ID", "STOP_NAME", "DAY_TYPE", "STOP_SEQUENCE_NUM", "AVG_TRIP_BOARDINGS", "AVG_TOTAL_BOARDINGS", "AVG_TRIP_ALIGHTINGS", "AVG_TOTAL_ALIGHTINGS", "AVG_TRIP_DEPARTING_LOAD"])
         writer.writerows(outputData[day_type])
 
     print(f"Output written to {fileName}")
 
+def runAggregationForRoute(routeId, month, year):
+  routeIdMapping = {"701": "Blue", "702": "Green", "703": "Orange"}
+  monthMapping = {"08": "August", "11": "November"}
+
+  fullFilePath = "../../data/rawData/ct/Swift_{0}_{1}_Full.csv".format(routeIdMapping[routeId], monthMapping[month]) 
+  inputData = get_input_data(fullFilePath)
+  dataWithDepartureLoads = populateDepartureLoad(inputData)
+  #print(dataWithDepartureLoads[1])
+  aggregatedData = aggregateBoardingAndAlightingData(dataWithDepartureLoads)
+  writeOutput(aggregatedData, routeId, year, month)
+
 
 # Edit these
-routeId = "701"
-month = "11"
+routeIds = ["701", "702", "703"]
+months = ["08", "11"]
 year = "24"
 
-routeIdMapping = {"701": "Blue", "702": "Green", "703": "Orange"}
-monthMapping = {"08": "August", "11": "November"}
-
-fullFilePath = "../../data/rawData/ct/Swift_{0}_{1}_Full.csv".format(routeIdMapping[routeId], monthMapping[month]) 
-inputData = get_input_data(fullFilePath)
-dataWithDepartureLoads = populateDepartureLoad(inputData)
-#print(dataWithDepartureLoads[1])
-aggregatedData = aggregateBoardingAndAlightingData(dataWithDepartureLoads)
-writeOutput(aggregatedData, routeId, year, month)
+for routeId in routeIds:
+   for month in months:
+      runAggregationForRoute(routeId, month, year)
