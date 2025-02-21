@@ -90,9 +90,8 @@ def get_ridership_between_stops(cumulative_per_stop_dict, startStop, endStop):
 def reorder_dict_with_prefix(keys_order, combined_dict):
     # Create a new dictionary with keys ordered as in keys_order
     ordered_dict = {}
-    for prefixed_key in keys_order:
+    for key in keys_order:
         # Strip prefix (anything before "_") to get the actual key
-        _, key = prefixed_key.split('_', 1)
         if key in combined_dict:
             ordered_dict[key] = combined_dict[key]
     return ordered_dict

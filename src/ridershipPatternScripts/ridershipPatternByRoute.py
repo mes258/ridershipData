@@ -6,7 +6,7 @@ from util import util
 from ridershipPatternScripts.routeSettings import RouteSettings
 from accessModules.routeDataAccessModule import RouteDataAccessModule
 from accessModules.stopDataAccessModule import StopDataAccessModule
-from graphingScripts.graphModule import plot_boarding_bars_and_dot_ridership, plot_stacked_boarding_bars
+from graphingScripts.graphModule import plot_trip_ridership, plot_daily_ridership
 
 
 # Input: 
@@ -15,7 +15,7 @@ from graphingScripts.graphModule import plot_boarding_bars_and_dot_ridership, pl
 #   Service period: For KCM routes, put the SERVICE_CHANGE_NUM (eg: "213" or "241"). For CT routes, put the 2 digit month (eg: "08" or "11")
 #   Day Type: "Weekday", "Saturday", or "Sunday". KCM only has "Weekday" data
 #   Agency Id: KCM: 1, CT: 29, ST: 40
-routeNum = "7"
+routeNum = "160"
 year = "24"
 servicePeriod = "241"
 dayType = "Weekday"
@@ -60,8 +60,8 @@ combinedOutboundTotalData = util.combine_dictionaries(outboundLoadData, outbound
 
 stopOrderInbound = routeDataAM.getOrderedStops(constants.inboundDirection)
 stopOrderOutbound = routeDataAM.getOrderedStops(constants.outboundDirection)
-# print("Stop order inbound")
-# print(stopOrderInbound)
+print("Stop order inbound")
+print(stopOrderInbound)
 # print(stopOrderOutbound)
 
 # print("combinedinboundtrip: ")
@@ -80,5 +80,5 @@ for letter, rapidRideRouteNum, shortName in constants.rapidRideMappings:
 
 
 # Graphs for STB:
-graphModule.plot_boarding_bars_and_dot_ridership(combinedInboundTripData, combinedOutboundTripData, routeDataAM, False)
-graphModule.plot_stacked_boarding_bars(combinedInboundTotalData, combinedOutboundTotalData, routeDataAM)
+plot_trip_ridership(combinedInboundTripData, combinedOutboundTripData, routeDataAM, stopDataAM)
+plot_daily_ridership(combinedInboundTotalData, combinedOutboundTotalData, routeDataAM, stopDataAM)

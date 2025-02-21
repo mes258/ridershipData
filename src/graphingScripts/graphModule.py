@@ -1,30 +1,35 @@
 import matplotlib.pyplot as plt
-from accessModules import routeDataAccessModule
-from accessModules import stopDataAccessModule
 import matplotlib.patches as mpatches
 import numpy as np
+import os
+import sys
+sys.path.insert(0, "../../src")
+
+from util import constants
+from util import util
+from ridershipPatternScripts.routeSettings import RouteSettings
+from accessModules.routeDataAccessModule import RouteDataAccessModule
+from accessModules.stopDataAccessModule import StopDataAccessModule
+
 
 #AM - 5AM-9AM, MID - 9AM-3PM, PM - 3PM-7PM, XEV - 7PM - 10PM, XNT 10PM - 5AM
 time_order_color = [['5am-9am (AM)', 'y'], ['9am-3pm (MID)', 'b'], ['3pm-7pm (PM)', 'g'], ['7pm-10pm (XEV)', 'm'], ['10pm-5am (XNT)', 'k']]
 
-def plot_boarding_bars_and_dot_ridership(inbound_sorted_data, outbound_sorted_data, am: routeDataAccessModule.AccessModule, perHour: bool):
+def plot_trip_ridership(inbound_sorted_data, outbound_sorted_data, routeDataAM: RouteDataAccessModule, stopDataAM: StopDataAccessModule):
     # Before setting up the plot, create all the labels: 
-    routeName = "Route {0}".format(am.routeNum)
-    for letter, rapidRideRouteNum, shortName in stopDataAccessModule.rapidRideMappings:
-      if am.routeNum == rapidRideRouteNum:
+    routeName = "Route {0}".format(routeDataAM.routeSettings.routeNum)
+    for letter, rapidRideRouteNum, shortName in constants.rapidRideMappings:
+      if routeDataAM.routeSettings.routeNum == rapidRideRouteNum:
         routeName = shortName
 
     # At this point, route name is either "Route N" or "X Line"
     # Need Overall title, per chart title, per chart y axis label, x axis label
-    overallTitle = "Average Weekday Ridership per {0} Trip in 20{1}".format(routeName, am.year)
+    overallTitle = "Average Weekday Ridership per {0} Trip in 20{1}".format(routeName, routeDataAM.routeSettings.year)
     inboundTitle = "Inbound Trips"
     outboundTitle = "Outbound Trips"
     inboundYAxis = "{0} Inbound Stops (Read Down)".format(routeName)
     outboundYAxis = "{0} Outbound Stops (Read Up)".format(routeName)
     xAxis = "Passenger Count"
-
-    if perHour:
-      overallTitle = "{0} Boardings and Alightings per Hour".format(routeName)
 
     mainTitleSize = 40
     subTitleSize = 30
@@ -51,9 +56,6 @@ def plot_boarding_bars_and_dot_ridership(inbound_sorted_data, outbound_sorted_da
     
     ax1.set_xlim(-10, 30)  # Set x-axis limits
     ax2.set_xlim(-10, 30) # Set x-axis limits
-    if perHour:
-      ax1.set_xlim(-60, 60) 
-      ax2.set_xlim(-60, 60)
     
     fig.suptitle(overallTitle, fontsize=mainTitleSize)
 
@@ -90,26 +92,18 @@ def plot_boarding_bars_and_dot_ridership(inbound_sorted_data, outbound_sorted_da
               for t_o_color in time_order_color:
                 ax1.plot(500, y_pos, 'o' + t_o_color[1], label=f'{t_o_color[0]}', markersize=6)
             
-            if not perHour:
-              # Plot dot for the first value (with slight vertical spacing for time periods)
-              ax1.plot(dot, y_pos, 'o' + time_order_color[j][1], label=f'{time_order_color[j][0]}', markersize=7)
+            # Plot dot for the first value (with slight vertical spacing for time periods)
+            ax1.plot(dot, y_pos, 'o' + time_order_color[j][1], label=f'{time_order_color[j][0]}', markersize=7)
 
-              # Plot negative bar for the second value and positive bar for the third value
-              ax1.barh(y_pos, -neg_bar, color=time_order_color[j][1], height=0.15, align='center')
-              ax1.barh(y_pos, pos_bar, color=time_order_color[j][1], height=0.15, align='center')
-            else:
-               # For per hour, divide the total by hour count
-              ax1.barh(i, -neg_bar/time_order_color[j][2], color=time_order_color[j][1], height=0.15, align='center')
-              ax1.barh(i, pos_bar/time_order_color[j][2], color=time_order_color[j][1], height=0.15, align='center')
+            # Plot negative bar for the second value and positive bar for the third value
+            ax1.barh(y_pos, -neg_bar, color=time_order_color[j][1], height=0.15, align='center')
+            ax1.barh(y_pos, pos_bar, color=time_order_color[j][1], height=0.15, align='center')
 
     # Set the y-ticks to the keys in the dictionary
     x = list(inbound_sorted_data.keys())
     for i in range(len(x)):
-        try:
-          x[i] = stopDataAccessModule.getStopNameFromStopId(am.routeNum, x[i])
-        except:
-          x[i] = am.getStopNameFromStopId(x[i])
-
+      # Populate stop names
+      x[i] = stopDataAM.getStopNameForStopId(x[i])
 
     ax1.set_yticks(range(len(x)))
     ax1.set_yticklabels(x)
@@ -135,26 +129,19 @@ def plot_boarding_bars_and_dot_ridership(inbound_sorted_data, outbound_sorted_da
               firstDot = False
               for t_o_color in time_order_color:
                 ax2.plot(500, y_pos, 'o' + t_o_color[1], label=f'{t_o_color[0]}', markersize=6)
-            
-            if not perHour:
-              # Plot dot for the first value (with slight vertical spacing for time periods)
-              ax2.plot(dot, y_pos, 'o' + time_order_color[j][1], label=f'{time_order_color[j][0]}', markersize=7)
+          
+            # Plot dot for the first value (with slight vertical spacing for time periods)
+            ax2.plot(dot, y_pos, 'o' + time_order_color[j][1], label=f'{time_order_color[j][0]}', markersize=7)
 
-              # Plot negative bar for the second value and positive bar for the third value
-              ax2.barh(y_pos, -neg_bar, color=time_order_color[j][1], height=0.15, align='center')
-              ax2.barh(y_pos, pos_bar, color=time_order_color[j][1], height=0.15, align='center')
-            else:
-              ax2.barh(y_pos, -neg_bar/time_order_color[j][2], color=time_order_color[j][1], height=0.15, align='center')
-              ax2.barh(y_pos, pos_bar/time_order_color[j][2], color=time_order_color[j][1], height=0.15, align='center')
+            # Plot negative bar for the second value and positive bar for the third value
+            ax2.barh(y_pos, -neg_bar, color=time_order_color[j][1], height=0.15, align='center')
+            ax2.barh(y_pos, pos_bar, color=time_order_color[j][1], height=0.15, align='center')
+            
 
     # Set the y-ticks to the keys in the dictionary
     x = list(outbound_sorted_data.keys())
     for i in range(len(x)):
-        try:
-          x[i] = stopDataAccessModule.getStopNameFromStopId(am.routeNum, x[i])
-        except:
-          x[i] = am.getStopNameFromStopId(x[i])
-
+      x[i] = stopDataAM.getStopNameForStopId(x[i])
 
     ax2.set_yticks(range(len(x)))
     ax2.set_yticklabels(x)
@@ -173,23 +160,24 @@ def plot_boarding_bars_and_dot_ridership(inbound_sorted_data, outbound_sorted_da
     plt.subplots_adjust(top=0.92)
 
     #plt.show()
-    if perHour:
-      fig.savefig('{0}/{1}/{0}PerHourPlot.png'.format(am.routeNum, am.year))   # save the plot to file
-    else:
-      fig.savefig('{0}/{1}/{0}FullPlot.png'.format(am.routeNum, am.year))   # save the plot to file
-    plt.close(fig)  
+    # eg: src/graphs/kcm/7/24/241/Weekday/TripRidership.png
+    directory = f"../../graphs/{constants.agencyIdAndInitials[routeDataAM.routeSettings.agencyId]}/{routeDataAM.routeSettings.routeNum}/{routeDataAM.routeSettings.year}/{routeDataAM.routeSettings.servicePeriod}/{routeDataAM.routeSettings.dayType}"
+    os.makedirs(directory, exist_ok=True)
+    output_file = os.path.join(directory, 'TripRidership.png')
+    fig.savefig(output_file)   # save the plot to file
+    plt.close(fig)
 
 
-def plot_stacked_boarding_bars(inbound_sorted_data, outbound_sorted_data, am: accessModule.AccessModule):
+def plot_daily_ridership(inbound_sorted_data, outbound_sorted_data, routeDataAM: RouteDataAccessModule, stopDataAM: StopDataAccessModule):
    # Before setting up the plot, create all the labels: 
-    routeName = "Route {0}".format(am.routeNum)
-    for letter, rapidRideRouteNum, shortName in stopDataAccessModule.rapidRideMappings:
-      if am.routeNum == rapidRideRouteNum:
+    routeName = "Route {0}".format(routeDataAM.routeSettings.routeNum)
+    for letter, rapidRideRouteNum, shortName in constants.rapidRideMappings:
+      if routeDataAM.routeSettings.routeNum == rapidRideRouteNum:
         routeName = shortName
 
     # At this point, route name is either "Route N" or "X Line"
     # Need Overall title, per chart title, per chart y axis label, x axis label
-    overallTitle = "Average Daily Stop Ridership for {0} in 20{1}".format(routeName, am.year)
+    overallTitle = "Average Daily Stop Ridership for {0} in 20{1}".format(routeName, routeDataAM.routeSettings.year)
     inboundTitle = "Inbound Trips"
     outboundTitle = "Outbound Trips"
     inboundYAxis = "{0} Inbound Stops (Read Down)".format(routeName)
@@ -230,16 +218,10 @@ def plot_stacked_boarding_bars(inbound_sorted_data, outbound_sorted_data, am: ac
     # Set the y-ticks to the keys in the dictionary
     x = list(inbound_sorted_data.keys())
     for i in range(len(x)):
-        try:
-          x[i] = stopDataAccessModule.getStopNameFromStopId(am.routeNum, x[i])
-        except:
-          x[i] = am.getStopNameFromStopId(x[i])
-
+      x[i] = stopDataAM.getStopNameForStopId(x[i])
 
     ax1.set_yticks(range(len(x)))
     ax1.set_yticklabels(x)
-
-
 
     maxPositiveStopTotal = 0 # boarding
     maxNegativeStopTotal = 0 # alightings
@@ -280,11 +262,7 @@ def plot_stacked_boarding_bars(inbound_sorted_data, outbound_sorted_data, am: ac
     # Set the y-ticks to the keys in the dictionary
     x = list(outbound_sorted_data.keys())
     for i in range(len(x)):
-        try:
-          x[i] = stopDataAccessModule.getStopNameFromStopId(am.routeNum, x[i])
-        except:
-          x[i] = am.getStopNameFromStopId(x[i])
-
+      x[i] = stopDataAM.getStopNameForStopId(x[i])
 
     ax2.set_yticks(range(len(x)))
     ax2.set_yticklabels(x)
@@ -334,4 +312,8 @@ def plot_stacked_boarding_bars(inbound_sorted_data, outbound_sorted_data, am: ac
 
     plt.subplots_adjust(top=0.92)
 
-    fig.savefig('{0}/{1}/{0}DailyTotals.png'.format(am.routeNum, am.year))   # save the plot to file
+    # eg: src/graphs/kcm/7/24/241/Weekday/TripRidership.png
+    directory = f"../../graphs/{constants.agencyIdAndInitials[routeDataAM.routeSettings.agencyId]}/{routeDataAM.routeSettings.routeNum}/{routeDataAM.routeSettings.year}/{routeDataAM.routeSettings.servicePeriod}/{routeDataAM.routeSettings.dayType}"
+    os.makedirs(directory, exist_ok=True)
+    output_file = os.path.join(directory, 'DailyRidership.png')
+    fig.savefig(output_file)   # save the plot to file

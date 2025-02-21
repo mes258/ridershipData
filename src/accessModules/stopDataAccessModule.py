@@ -6,14 +6,14 @@ sys.path.insert(0, "../../src")
 
 from util import constants
 from ridershipPatternScripts.routeSettings import RouteSettings
-import routeDataAccessModule
+from accessModules.routeDataAccessModule import RouteDataAccessModule
 
 class StopDataAccessModule:
   def __init__(self, routeSettings: RouteSettings):
     self.stopData = []
     self.routeSettings = routeSettings
     # This is need to get the stop order
-    self.routeDataAM = routeDataAccessModule.RouteDataAccessModule(self.routeSettings)
+    self.routeDataAM = RouteDataAccessModule(self.routeSettings)
 
   def readStopFile(self, year="", servicePeriod=""):
     if self.stopData == []:
