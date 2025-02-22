@@ -74,7 +74,7 @@ def populateDepartureLoad(data):
 
 def aggregateBoardingAndAlightingData(data):
   # Aggregate data
-  aggregated_data = defaultdict(lambda: {"total_alightings": 0, "total_boardings": 0, "total_departure_load": 0, "trip_counts": set(), "date_totals": defaultdict(int)})
+  aggregated_data = defaultdict(lambda: {"total_alightings": 0, "total_boardings": 0, "total_departure_load": 0, "trip_counts": [], "date_totals": defaultdict(int)})
   unique_dates = {"Weekday": set(), "Saturday": set(), "Sunday": set()}
 
   for row in data:
@@ -82,7 +82,7 @@ def aggregateBoardingAndAlightingData(data):
       aggregated_data[key]["total_alightings"] += row["ALIGHTINGS"]
       aggregated_data[key]["total_boardings"] += row["BOARDINGS"]
       aggregated_data[key]["total_departure_load"] += row["DEPARTURE_LOAD"]
-      aggregated_data[key]["trip_counts"].add(row["TRIP_ID"])
+      aggregated_data[key]["trip_counts"].append(row["TRIP_ID"])
       aggregated_data[key]["date_totals"][row["DATE"]] += row["ALIGHTINGS"]
       unique_dates[row["DAY_TYPE"]].add(row["DATE"])
 
@@ -97,10 +97,10 @@ def aggregateBoardingAndAlightingData(data):
       
       if num_days > 0 and num_unique_trips > 0:
           avg_total_alightings = values["total_alightings"] / num_days
-          avg_trip_alightings = values["total_alightings"] / (num_unique_trips * num_days)
+          avg_trip_alightings = values["total_alightings"] / (num_unique_trips)
           avg_total_boardings = values["total_boardings"] / num_days
-          avg_trip_boardings = values["total_boardings"] / (num_unique_trips * num_days)
-          avg_trip_departing_load = values["total_departure_load"] / (num_unique_trips * num_days)
+          avg_trip_boardings = values["total_boardings"] / (num_unique_trips)
+          avg_trip_departing_load = values["total_departure_load"] / (num_unique_trips)
           
           output_data[day_type].append((*key, '%.3f'%(avg_trip_boardings), '%.3f'%(avg_total_boardings), '%.3f'%(avg_trip_alightings), '%.3f'%(avg_total_alightings), '%.3f'%(avg_trip_departing_load)))
   return output_data
@@ -136,10 +136,10 @@ def runAggregationForRoute(routeId, month, year):
 
 
 # Edit these
-routeIds = ["701", "702", "703"]
-months = ["08", "11"]
-year = "24"
+# routeIds = ["701", "702", "703"]
+# months = ["08", "11"]
+# year = "24"
 
-for routeId in routeIds:
-   for month in months:
-      runAggregationForRoute(routeId, month, year)
+# for routeId in routeIds:
+#    for month in months:
+#       runAggregationForRoute(routeId, month, year)

@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import numpy as np
+from collections import OrderedDict
 import os
 import sys
 sys.path.insert(0, "../../src")
@@ -15,10 +16,15 @@ from accessModules.stopDataAccessModule import StopDataAccessModule
 #AM - 5AM-9AM, MID - 9AM-3PM, PM - 3PM-7PM, XEV - 7PM - 10PM, XNT 10PM - 5AM
 time_order_color = [['5am-9am (AM)', 'y'], ['9am-3pm (MID)', 'b'], ['3pm-7pm (PM)', 'g'], ['7pm-10pm (XEV)', 'm'], ['10pm-5am (XNT)', 'k']]
 
+# Set the stop name label size based on the number of stops. 
+def getAxisLabelSize(inboundStopCount, outboundStopCount):
+    maxStopCount = max(inboundStopCount, outboundStopCount)
+    return -0.2 * maxStopCount + 30
+
 def plot_trip_ridership(inbound_sorted_data, outbound_sorted_data, routeDataAM: RouteDataAccessModule, stopDataAM: StopDataAccessModule):
     # Before setting up the plot, create all the labels: 
     routeName = "Route {0}".format(routeDataAM.routeSettings.routeNum)
-    for letter, rapidRideRouteNum, shortName in constants.rapidRideMappings:
+    for letter, rapidRideRouteNum, shortName in constants.namedRouteMappings:
       if routeDataAM.routeSettings.routeNum == rapidRideRouteNum:
         routeName = shortName
 
@@ -33,8 +39,9 @@ def plot_trip_ridership(inbound_sorted_data, outbound_sorted_data, routeDataAM: 
 
     mainTitleSize = 40
     subTitleSize = 30
-    axisLabelSize = 20 # change to 13 for route with a lot of stops (eg: 165)
-    axisIncrementsSize = 20 # change to 13 for route with a lot of stops (eg: 165)
+    axisLabelSizeValue = min(getAxisLabelSize(len(inbound_sorted_data), len(outbound_sorted_data)), 20)
+    axisLabelSize = axisLabelSizeValue 
+    axisIncrementsSize = axisLabelSizeValue
     legendTextSize = 15
 
     
@@ -171,7 +178,7 @@ def plot_trip_ridership(inbound_sorted_data, outbound_sorted_data, routeDataAM: 
 def plot_daily_ridership(inbound_sorted_data, outbound_sorted_data, routeDataAM: RouteDataAccessModule, stopDataAM: StopDataAccessModule):
    # Before setting up the plot, create all the labels: 
     routeName = "Route {0}".format(routeDataAM.routeSettings.routeNum)
-    for letter, rapidRideRouteNum, shortName in constants.rapidRideMappings:
+    for letter, rapidRideRouteNum, shortName in constants.namedRouteMappings:
       if routeDataAM.routeSettings.routeNum == rapidRideRouteNum:
         routeName = shortName
 
@@ -186,8 +193,9 @@ def plot_daily_ridership(inbound_sorted_data, outbound_sorted_data, routeDataAM:
 
     mainTitleSize = 40
     subTitleSize = 30
-    axisLabelSize = 20
-    axisIncrementsSize = 20
+    axisLabelSizeValue = min(getAxisLabelSize(len(inbound_sorted_data), len(outbound_sorted_data)), 20)
+    axisLabelSize = axisLabelSizeValue 
+    axisIncrementsSize = axisLabelSizeValue
     legendTextSize = 15
     barSize = 0.6
 

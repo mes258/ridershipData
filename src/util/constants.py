@@ -1,5 +1,8 @@
 # TODO: Update to a general "named Routes" option that includes swift
-rapidRideMappings = {
+namedRouteMappings = {
+  ("blue", "701", "Blue Line"),
+  ("green", "702", "Green Line"),
+  ("orange", "703", "Orange Line"),
   ("a", "671", "A Line"),
   ("b", "672", "B Line"),
   ("c", "673", "C Line"),

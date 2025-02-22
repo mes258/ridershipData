@@ -14,8 +14,8 @@ from graphingScripts.graphModule import plot_trip_ridership, plot_daily_ridershi
 #   Year: Two digit year (eg: "24")
 #   Service period: For KCM routes, put the SERVICE_CHANGE_NUM (eg: "213" or "241"). For CT routes, put the 2 digit month (eg: "08" or "11")
 #   Day Type: "Weekday", "Saturday", or "Sunday". KCM only has "Weekday" data
-#   Agency Id: KCM: 1, CT: 29, ST: 40
-routeNum = "160"
+#   Agency Id: KCM: 1, CT: 29, ST: 1 (ST should be 40 once I separate ST and KCM routes. For now, use 1 for ST. )
+routeNum = "545"
 year = "24"
 servicePeriod = "241"
 dayType = "Weekday"
@@ -23,7 +23,7 @@ agencyId = 1
 
 
 # Convert the RR route name to the underllying route number: a = 671, b = 672, etc. 
-for letter, rapidRideRouteNum, shortName in constants.rapidRideMappings:
+for letter, rapidRideRouteNum, shortName in constants.namedRouteMappings:
   if letter in routeNum.lower():
     routeNum = rapidRideRouteNum
     break 
@@ -46,26 +46,18 @@ inboundTripAlightData, outboundTripAlightData = util.split_data_by_direction(ann
 combinedInboundTripData = util.combine_dictionaries(inboundLoadData, inboundTripAlightData, inboundTripBoardData)
 combinedOutboundTripData = util.combine_dictionaries(outboundLoadData, outboundTripAlightData, outboundTripBoardData)
 
-# Per hour data
 annual_AVG_TOTAL_BOARDINGS = routeDataAM.getColumnValuesPerStop("AVG_TOTAL_BOARDINGS")
 annual_AVG_TOTAL_ALIGHTINGS = routeDataAM.getColumnValuesPerStop("AVG_TOTAL_ALIGHTINGS")
 
 inboundTotalBoardData, outboundTotalBoardData = util.split_data_by_direction(annual_AVG_TOTAL_BOARDINGS)
 inboundTotalAlightData, outboundTotalAlightData = util.split_data_by_direction(annual_AVG_TOTAL_ALIGHTINGS)
 
-#inboundTotalLoadData = util.get_total_load_data(inboundTotalAlightData, inboundTotalBoardData)
 combinedInboundTotalData = util.combine_dictionaries(inboundLoadData, inboundTotalAlightData, inboundTotalBoardData)
 combinedOutboundTotalData = util.combine_dictionaries(outboundLoadData, outboundTotalAlightData, outboundTotalBoardData)
 
-
 stopOrderInbound = routeDataAM.getOrderedStops(constants.inboundDirection)
 stopOrderOutbound = routeDataAM.getOrderedStops(constants.outboundDirection)
-print("Stop order inbound")
-print(stopOrderInbound)
-# print(stopOrderOutbound)
 
-# print("combinedinboundtrip: ")
-# print(combinedInboundTripData)
 if stopOrderInbound is not None:
   combinedInboundTripData = util.reorder_dict_with_prefix(reversed(stopOrderInbound), combinedInboundTripData)
   combinedInboundTotalData = util.reorder_dict_with_prefix(reversed(stopOrderInbound), combinedInboundTotalData)
@@ -74,7 +66,7 @@ if stopOrderOutbound is not None:
   combinedOutboundTotalData = util.reorder_dict_with_prefix(stopOrderOutbound, combinedOutboundTotalData)
 
 
-for letter, rapidRideRouteNum, shortName in constants.rapidRideMappings:
+for letter, rapidRideRouteNum, shortName in constants.namedRouteMappings:
   if routeNum == rapidRideRouteNum:
     routeName = shortName
 

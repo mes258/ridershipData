@@ -74,7 +74,7 @@ class RouteDataAccessModule:
   # Get the human readable route number (eg: 7 or E Line)
   # TODO: add swift support. 
   def getFriendlyRouteNum(self):
-    for letter, rapidRideRouteNum, shortName in constants.rapidRideMappings:
+    for letter, rapidRideRouteNum, shortName in constants.namedRouteMappings:
       if self.routeSettings.routeNum == rapidRideRouteNum:
         return shortName
     return self.routeSettings.routeNum
@@ -114,10 +114,10 @@ class RouteDataAccessModule:
 
 # Tests: 
 # TODO: Move to a test class and add proper test cases
-testRouteSettings = RouteSettings("7", "24", "241", "Weekday", 1)
-testRouteAM = RouteDataAccessModule(testRouteSettings)
-testStopIds = testRouteAM.getOrderedStops("I")
-print(testStopIds)
+# testRouteSettings = RouteSettings("7", "24", "241", "Weekday", 1)
+# testRouteAM = RouteDataAccessModule(testRouteSettings)
+# testStopIds = testRouteAM.getOrderedStops("I")
+# print(testStopIds)
 
 
   
