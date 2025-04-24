@@ -24,6 +24,14 @@ def getAverageDailyBoardings(inputData):
   print("Average Daily Ridership: ")
   print(averages)
 
+def getTotalRidership(inputData):
+  totalRidership = 0
+    
+  for entry in inputData:    
+    totalRidership += entry['BOARDINGS']
+    
+  print(f"Total ridership: {totalRidership} ")
+
 def getBusiestTrip(inputData):
   trip_totals = defaultdict(int)
     
@@ -63,6 +71,7 @@ def runCtQueries(routeId, month):
   inputData = get_input_data(fullFilePath)
 
   print(f"Stats for {routeIdMapping[routeId]} Line in {monthMapping[month]}")
+  getTotalRidership (inputData)
   getAverageDailyBoardings(inputData)
   getBusiestTrip(inputData)
   getBusiestDay(inputData)
