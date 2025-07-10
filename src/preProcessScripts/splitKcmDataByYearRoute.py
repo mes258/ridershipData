@@ -2,7 +2,7 @@ import os
 import csv
 
 # Replace with the actual file path
-input_file = '../../data/rawData/kcm/Spring_2024_Stop_Summary_Data.csv'  
+input_file = '../../data/rawData/kcm/Fall_2024_Summarized_Stop_Data.csv'  
 
 # Open the input CSV file
 with open(input_file, mode='r', newline='') as infile:
