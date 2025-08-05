@@ -13,6 +13,7 @@ from util import util
 from ridershipPatternScripts.routeSettings import RouteSettings
 from accessModules.routeDataAccessModule import RouteDataAccessModule
 from accessModules.stopDataAccessModule import StopDataAccessModule
+import csv
 
 
 #AM - 5AM-9AM, MID - 9AM-3PM, PM - 3PM-7PM, XEV - 7PM - 10PM, XNT 10PM - 5AM
@@ -591,4 +592,115 @@ def plot_daily_ridership_before_after(inbound_before, inbound_after, outbound_be
     directory = f"../../graphs/{constants.agencyIdAndInitials[afterRouteDataAM.routeSettings.agencyId]}/{afterRouteDataAM.routeSettings.routeNum}"
     os.makedirs(directory, exist_ok=True)
     output_file = os.path.join(directory, 'BeforeAfterRidership.png')
+    fig.savefig(output_file)   # save the plot to file
+
+def plot_link_data(routeDataAM:RouteDataAccessModule):
+    inbound_data = []
+    outbound_data = []
+
+    with open(routeDataAM.ridershipDatafilePath, newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            try:
+                direction = row["Direction, Friendly"].strip()
+                stop_name = row["LongName"].strip()
+                station_code = int(row["stationCode"])
+                boarding = int(row["BoardingCnt"])
+                alighting = int(row["AlightingCnt"])
+            except (ValueError, KeyError):
+                continue  # skip rows with missing/invalid data
+
+            stop_data = {
+                "stop": stop_name,
+                "station_code": station_code,
+                "boarding": boarding,
+                "alighting": alighting
+            }
+
+            if direction == "East" or direction == "South":
+                inbound_data.append(stop_data)
+            elif direction == "West" or direction == "North":
+                outbound_data.append(stop_data)
+
+    # Sort by station_code descending
+    inbound_data.sort(key=lambda x: x["station_code"], reverse=True)
+    outbound_data.sort(key=lambda x: x["station_code"], reverse=True)
+
+    # Extract data for plotting
+
+    #routeName = "Route {0}".format(routeDataAM.routeSettings.routeNum)
+    routeName = routeDataAM.routeSettings.routeNum
+    overallTitle = "Average Monthly Stop Ridership for the {0} in {1} 20{2}".format(routeName, calendar.month_name[int(routeDataAM.routeSettings.servicePeriod)], routeDataAM.routeSettings.year)
+    inboundTitle = "Inbound Trips"
+    outboundTitle = "Outbound Trips"
+    inboundYAxis = "{0} Inbound Stops (Read Down)".format(routeName)
+    outboundYAxis = "{0} Outbound Stops (Read Up)".format(routeName)
+    xAxis = "Passenger Count"
+
+    mainTitleSize = 40
+    subTitleSize = 30
+    axisLabelSizeValue = min(getAxisLabelSize(len(inbound_data), len(outbound_data)), 20)
+    axisLabelSize = axisLabelSizeValue 
+    axisIncrementsSize = axisLabelSizeValue
+    legendTextSize = 15
+    barSize = 0.6
+
+    
+    fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(30, 20))
+    plt.rc('xtick', labelsize=12)     
+    plt.rc('ytick', labelsize=12)
+    ax1.set_xlabel(xAxis, fontsize=axisLabelSize)
+    ax1.set_ylabel(inboundYAxis, fontsize=axisLabelSize)
+    ax1.set_title(inboundTitle, fontsize=subTitleSize)
+    ax1.tick_params(axis='x', labelsize=axisIncrementsSize)
+    ax1.tick_params(axis='y', labelsize=axisIncrementsSize)
+
+    ax2.set_xlabel(xAxis, fontsize=axisLabelSize)
+    ax2.set_ylabel(outboundYAxis, fontsize=axisLabelSize)
+    ax2.set_title(outboundTitle, fontsize=subTitleSize)
+    ax2.tick_params(axis='x', labelsize=axisIncrementsSize)
+    ax2.tick_params(axis='y', labelsize=axisIncrementsSize)
+    
+    fig.suptitle(overallTitle, fontsize=mainTitleSize)
+
+    ax1.grid(True)
+    ax2.grid(True)
+    ax1.set_axisbelow(True)
+    ax2.set_axisbelow(True)
+
+    # Use union of stop names from both east and west, matched by station code
+    station_code_to_name = {}
+    for entry in inbound_data + outbound_data:
+        station_code_to_name[entry["station_code"]] = entry["stop"]
+
+    # Get all unique station codes sorted descending
+    all_station_codes = sorted(set(station_code_to_name.keys()), reverse=True)
+
+    stop_labels = [station_code_to_name[code] for code in all_station_codes]
+    print(stop_labels)
+    ax1.set_yticks(range(len(stop_labels)))
+    ax1.set_yticklabels(stop_labels)
+    ax2.set_yticks(range(len(stop_labels)))
+    ax2.set_yticklabels(stop_labels)
+
+    barSize = 0.6
+
+
+    for i, entry in enumerate(inbound_data):
+        ax1.barh(i, -entry["alighting"], color=to_rgba("orange", 0.5), height=barSize, label="Alightings" if i == 0 else "")
+        ax1.barh(i, entry["boarding"], color="orange", height=barSize, label="Boardings" if i == 0 else "")
+
+    ax1.legend()
+
+    for i, entry in enumerate(outbound_data):
+        ax2.barh(i, -entry["alighting"], color=to_rgba("blue", 0.5), height=barSize, label="Alightings" if i == 0 else "")
+        ax2.barh(i, entry["boarding"], color="blue", height=barSize, label="Boardings" if i == 0 else "")
+
+    ax2.legend()
+
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
+    #plt.show()
+    directory = f"../../graphs/{constants.agencyIdAndInitials[routeDataAM.routeSettings.agencyId]}/{routeDataAM.routeSettings.routeNum}/{routeDataAM.routeSettings.year}/{routeDataAM.routeSettings.servicePeriod}/{routeDataAM.routeSettings.dayType}"
+    os.makedirs(directory, exist_ok=True)
+    output_file = os.path.join(directory, 'monthlyRidership.png')
     fig.savefig(output_file)   # save the plot to file

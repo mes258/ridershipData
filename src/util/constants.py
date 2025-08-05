@@ -41,3 +41,41 @@ kcmServiceChangeNumbers = ["191","192","193","201","202","203","211","212","213"
 
 inboundDirection = "I"
 outboundDirection = "O"
+
+
+linkStationIdNumbers = {
+  "Lynnwood City Center": 140,
+  "Mountlake Terrace": 141,
+  "Shoreline North/185th": 142, 
+  "Shoreline South/148th": 143,
+  "Northgate": 145,
+  "Roosevelt": 146,
+  "U District": 147,
+  "University of Washington": 148,
+  "Capitol Hill": 149,
+  "Westlake/Seattle": 150,
+  "Symphony": 151,
+  "University St": 151,
+  "Pioneer Square": 152,
+  "International District/Chinatown": 153,
+  "Stadium": 154,
+  "SODO": 155,
+  "Beacon Hill": 156,
+  "Mount Baker": 157,
+  "Columbia City": 158,
+  "Othello": 160,
+  "Rainier Beach": 161,
+  "Tukwila International Blvd": 163,
+  "SeaTac/Airport": 164,
+  "Angle Lake": 165,
+  "South Bellevue": 256,
+  "East Main": 257,
+  "Bellevue Downtown": 258,
+  "Wilburton": 259,
+  "Spring District": 260,
+  "BelRed": 261,
+  "Overlake Village": 262,
+  "Redmond Technology": 263,
+  "Marymoor Village": 264,
+  "Downtown Redmond": 265
+}
