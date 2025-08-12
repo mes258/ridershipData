@@ -6,7 +6,7 @@ from util import util
 from ridershipPatternScripts.routeSettings import RouteSettings
 from accessModules.routeDataAccessModule import RouteDataAccessModule
 from accessModules.stopDataAccessModule import StopDataAccessModule
-from graphingScripts.graphModule import plot_trip_ridership, plot_daily_ridership, plot_link_data
+from graphingScripts.graphModule import plot_trip_ridership, plot_daily_ridership, plot_link_data, plot_link_data_may_2025
 
 
 # Input: 
@@ -15,11 +15,15 @@ from graphingScripts.graphModule import plot_trip_ridership, plot_daily_ridershi
 #   Service period: For KCM routes, put the SERVICE_CHANGE_NUM (eg: "213" or "241"). For CT routes, put the 2 digit month (eg: "08" or "11")
 #   Day Type: "Weekday", "Saturday", or "Sunday". KCM only has "Weekday" data
 #   Agency Id: KCM: 1, CT: 29, ST: 1 (ST should be 40 once I separate ST and KCM routes. For now, use 1 for ST. )
-routeNum = "2 Line"
+routeNum = "1 Line"
 year = "24"
 servicePeriod = "6"
 dayType = "Weekday"
 agencyId = 40
+linkOverride = True
+
+if linkOverride:
+  plot_link_data_may_2025(routeNum)
 
 if(routeNum != "1 Line" and routeNum != "2 Line"):
   # Convert the RR route name to the underllying route number: a = 671, b = 672, etc. 

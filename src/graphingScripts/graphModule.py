@@ -675,7 +675,7 @@ def plot_link_data(routeDataAM:RouteDataAccessModule):
 
     # Get all unique station codes sorted descending
     all_station_codes = sorted(set(station_code_to_name.keys()), reverse=True)
-
+    print(all_station_codes)
     stop_labels = [station_code_to_name[code] for code in all_station_codes]
     print(stop_labels)
     ax1.set_yticks(range(len(stop_labels)))
@@ -704,3 +704,108 @@ def plot_link_data(routeDataAM:RouteDataAccessModule):
     os.makedirs(directory, exist_ok=True)
     output_file = os.path.join(directory, 'monthlyRidership.png')
     fig.savefig(output_file)   # save the plot to file
+
+def plot_link_data_may_2025(routeName):
+  directionA = ""
+  directionB = ""
+  data = []
+  dataPath = ""
+  shortName = ""
+  plotColor = ""
+
+  if routeName == "1 Line":
+    dataPath = "../../data/stRouteData/1 Line/25/5/Weekday/perDirectionLinkBoardings.csv"
+    directionA = "South"
+    directionB = "North"
+    shortName = "1Line"
+    plotColor = "#5caa42"
+  if routeName == "2 Line":
+    dataPath = "../../data/stRouteData/2 Line/25/5/Weekday/perDirectionLinkBoardings.csv"
+    directionA = "West"
+    directionB = "East"
+    shortName = "2Line"
+    plotColor = "#449fda"
+
+  with open(dataPath, newline='', encoding='utf-8') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        try:
+            stop_name = row["Station"].strip()
+            aBoarding = int(row[directionA])
+            bBoarding = int(row[directionB])
+            station_code = int(row["stationCode"])
+        except (ValueError, KeyError):
+            continue  # skip rows with missing/invalid data
+
+        stop_data = {
+            "stop": stop_name,
+            "aBoarding": aBoarding,
+            "bBoarding": bBoarding,
+            "stopCode": station_code
+        }
+
+        data.append(stop_data)
+
+  if routeName == "1 Line":
+    data.sort(key=lambda x: x["stopCode"], reverse=True)
+  if routeName == "2 Line":
+    data.sort(key=lambda x: x["stopCode"])
+
+
+  routeName = routeName
+  overallTitle = "Average Weekday Boardings by Station for the {0} in May 2025".format(routeName)
+  yAxis = "{0} Stations".format(routeName)
+  xAxis = "Passenger Count"
+
+  mainTitleSize = 40
+  subTitleSize = 30
+  axisLabelSizeValue = min(getAxisLabelSize(len(data), 0), 20)
+  axisLabelSize = axisLabelSizeValue 
+  axisIncrementsSize = axisLabelSizeValue
+  legendTextSize = 20
+  barSize = 0.6
+
+  fig, ax1 = plt.subplots(nrows=1, ncols=1, figsize=(30, 20))
+  plt.rc('xtick', labelsize=12)     
+  plt.rc('ytick', labelsize=12)
+  ax1.set_xlabel(xAxis, fontsize=axisLabelSize)
+  ax1.set_ylabel(yAxis, fontsize=axisLabelSize)
+  ax1.tick_params(axis='x', labelsize=axisIncrementsSize)
+  ax1.tick_params(axis='y', labelsize=axisIncrementsSize)
+  ax1.grid(True)
+  ax1.set_axisbelow(True)
+
+
+  fig.suptitle(overallTitle, fontsize=mainTitleSize)
+
+  station_code_to_name = {}
+  for entry in data:
+      station_code_to_name[entry["stopCode"]] = entry["stop"]
+
+  # Get all unique station codes sorted descending
+  all_station_codes = []
+
+  if routeName == "1 Line":
+    all_station_codes = sorted(set(station_code_to_name.keys()), reverse=True)
+  if routeName == "2 Line":
+    all_station_codes = sorted(set(station_code_to_name.keys()))
+  
+  stop_labels = [station_code_to_name[code] for code in all_station_codes]
+  print(stop_labels)
+  ax1.set_yticks(range(len(stop_labels)))
+  ax1.set_yticklabels(stop_labels)
+
+  barSize = 0.6
+
+  for i, entry in enumerate(data):
+      ax1.barh(i, -entry["aBoarding"], color=to_rgba(plotColor, 0.5), height=barSize, label=f"{directionA}bound Boardings" if i == 0 else "")
+      ax1.barh(i, entry["bBoarding"], color=plotColor, height=barSize, label=f"{directionB}bound Boardings" if i == 0 else "")
+
+  ax1.legend(fontsize=legendTextSize)
+
+  plt.tight_layout(rect=[0, 0, 1, 0.95])
+  # plt.show()
+  directory = f"../../graphs/st/{routeName}"
+  os.makedirs(directory, exist_ok=True)
+  output_file = os.path.join(directory, f'average{shortName}WeekdayBoardingsByDirection.png')
+  fig.savefig(output_file)   # save the plot to file
