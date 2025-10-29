@@ -753,7 +753,7 @@ def plot_link_data_may_2025(routeName):
 
 
   routeName = routeName
-  overallTitle = "Average Weekday Boardings by Station for the {0} in May 2025".format(routeName)
+  overallTitle = "Average Weekday Ridership by Station for Link {0} in May 2025".format(routeName)
   yAxis = "{0} Stations".format(routeName)
   xAxis = "Passenger Count"
 
@@ -802,6 +802,8 @@ def plot_link_data_may_2025(routeName):
       ax1.barh(i, entry["bBoarding"], color=plotColor, height=barSize, label=f"{directionB}bound Boardings" if i == 0 else "")
 
   ax1.legend(fontsize=legendTextSize)
+  xticks = ax1.get_xticks()
+  ax1.set_xticklabels([abs(int(x)) for x in xticks])
 
   plt.tight_layout(rect=[0, 0, 1, 0.95])
   # plt.show()
